@@ -1,0 +1,37 @@
+.info-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.info-section h1 {
+    margin-bottom: 0;
+}
+
+.info-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 60%;
+    color: #8b949e;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.info-section p {
+    color: #8b949e;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 767px) {
+    .info-section h1 {
+        margin-bottom: 20px;
+    }
+}

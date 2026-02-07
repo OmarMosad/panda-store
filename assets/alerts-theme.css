@@ -1,0 +1,120 @@
+:root {
+    --bg1: #0b1020;
+    --bg2: #0a1326;
+    --c1: #e6f2ff;
+    --c2: #a6c9ff;
+    --brand: #34b3ff;
+    --accent: #ffd76a;
+    --danger: #ff6b6b;
+    --ok: #42d17b
+}
+
+/* Base popup */
+.swal2-container {
+    padding: 16px
+}
+
+.swal2-popup {
+    background: linear-gradient(180deg, rgba(13, 25, 48, .98), rgba(10, 22, 39, .98)) !important;
+    color: var(--c1) !important;
+    border: 1px solid rgba(0, 163, 255, .18) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .55) !important;
+    backdrop-filter: blur(10px)
+}
+
+.swal2-title {
+    font-weight: 800;
+    font-size: 20px;
+    color: #eaf3ff
+}
+
+.swal2-html-container {
+    color: var(--c2)
+}
+
+/* Buttons */
+.swal2-actions {
+    gap: 8px
+}
+
+.swal2-styled {
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 10px 16px !important;
+    font-weight: 800 !important
+}
+
+.swal2-styled.swal2-confirm {
+    background: linear-gradient(90deg, #34b3ff, #7cc8ff) !important;
+    color: #0b1020 !important
+}
+
+.swal2-styled.swal2-cancel {
+    background: #0f1e36 !important;
+    color: #fff !important;
+    border: 1px solid rgba(0, 163, 255, .25) !important
+}
+
+/* Icons */
+.swal2-icon {
+    box-shadow: none !important
+}
+
+.swal2-icon.swal2-success {
+    border-color: rgba(66, 209, 123, .4) !important;
+    color: #b9f4d3
+}
+
+.swal2-icon.swal2-error {
+    border-color: rgba(255, 107, 107, .35) !important
+}
+
+.swal2-icon.swal2-warning {
+    border-color: rgba(255, 215, 106, .35) !important
+}
+
+/* Toasts */
+.swal2-toast {
+    background: linear-gradient(180deg, rgba(13, 25, 48, .98), rgba(10, 22, 39, .98)) !important;
+    color: #eaf3ff !important;
+    border: 1px solid rgba(0, 163, 255, .18) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .45) !important
+}
+
+.swal2-timer-progress-bar {
+    background: linear-gradient(90deg, #34b3ff, #7cc8ff) !important;
+    height: 3px
+}
+
+/* Close (X) button styling for alerts and toasts */
+.swal2-close {
+    color: #e6f2ff !important;
+    opacity: .85 !important;
+    border-radius: 8px !important;
+    transition: background .2s ease, opacity .2s ease !important;
+}
+.swal2-close:hover {
+    background: rgba(255, 255, 255, .08) !important;
+    opacity: 1 !important;
+}
+
+/* Processing modal: make it feel full-screen and premium */
+.swal2-processing-container {
+    backdrop-filter: blur(6px);
+    background: rgba(5, 10, 20, 0.55);
+}
+.swal2-processing-popup {
+    width: min(640px, 92vw) !important;
+    padding: 28px !important;
+    border-radius: 18px !important;
+}
+.swal2-processing-title {
+    font-size: 22px !important;
+    letter-spacing: .2px;
+}
+.swal2-processing-text {
+    font-size: 15px !important;
+    color: var(--c2) !important;
+}

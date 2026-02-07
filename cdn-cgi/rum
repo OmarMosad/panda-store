@@ -1,0 +1,30 @@
+// Cloudflare RUM (Real User Monitoring) Mock
+// This file prevents 404 errors for Cloudflare RUM requests
+(function() {
+  'use strict';
+  
+  // Initialize RUM mock
+  if (typeof window !== 'undefined') {
+    window.__cfRUM = window.__cfRUM || {};
+    
+    // Mock RUM methods
+    window.__cfRUM.init = window.__cfRUM.init || function() {
+      return true;
+    };
+    
+    window.__cfRUM.track = window.__cfRUM.track || function() {
+      return true;
+    };
+    
+    window.__cfRUM.beacon = window.__cfRUM.beacon || function() {
+      return true;
+    };
+    
+    // Prevent errors
+    window.__cfRUM.error = function() {
+      return false;
+    };
+    
+    console.log = function() {};
+  }
+})();

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://pandastore.store/sitemap-pages.xml</loc>
+    <lastmod>2026-02-02</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://pandastore.store/sitemap-blog.xml</loc>
+    <lastmod>2026-02-02</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://pandastore.store/sitemap-guides.xml</loc>
+    <lastmod>2026-02-02</lastmod>
+  </sitemap>
+</sitemapindex>

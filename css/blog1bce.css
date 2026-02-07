@@ -1,0 +1,129 @@
+.blog-main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.first-blog-main-section {
+
+}
+
+.first-article-wrapper {
+    margin-bottom: 40px;
+}
+
+.article-wrapper-animation {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-wrapper-animation:hover {
+    transform: translateY(-5px);
+}
+
+.first-article-image-wrapper {
+
+}
+
+.first-article-image {
+    max-width: 100%;
+    border-radius: 40px;
+}
+
+.first-article-description-wrapper {
+    margin-top: 20px;
+}
+
+.first-article-title {
+    color: #e79710;
+}
+
+.first-article-summary {
+    color: #8b949e;
+    line-height: 20px;
+}
+
+.first-article-subject {
+    color: #8b949e;
+    line-height: 25px;
+}
+
+.first-article-subject p {
+    color: #8b949e;
+}
+
+.first-article-subject b {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.first-article-subject a {
+    color: #e79710;
+    font-weight: 600;
+}
+
+.first-article-subject ul {
+    list-style: circle;
+    padding: 0 0 0 40px;
+}
+
+.articles-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.article-wrapper {
+    max-width: 300px;
+}
+
+.article-image-wrapper {
+
+}
+
+.article-image {
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.article-description-wrapper {
+}
+
+.article-title {
+    color: #e79710;
+    margin-top: 10px;
+    font-size: 18px;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}
+
+.article-summary {
+    color: #8b949e;
+    line-height: 20px;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+}
+
+@media screen and (max-width: 767px) {
+    .first-article-wrapper {
+        margin: 0 15px 30px;
+    }
+
+    .first-article-title {
+        font-size: 18px;
+    }
+
+    .articles-wrapper {
+        gap: 30px;
+    }
+
+    .article-wrapper {
+        max-width: 100%;
+        margin: 0 15px;
+    }
+}

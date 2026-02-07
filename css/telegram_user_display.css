@@ -1,0 +1,260 @@
+/* Telegram User Display Styles */
+
+#user-display-container {
+    display: none;
+    margin-top: 12px;
+    animation: fadeInUp 0.3s ease;
+}
+
+.telegram-user-display {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #1a2332 0%, #232d3f 100%);
+    border-radius: 12px;
+    border: 2px solid #ffd76a33;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.telegram-user-display:hover {
+    border-color: #ffd76a66;
+    box-shadow: 0 6px 16px rgba(255, 215, 106, 0.2);
+    transform: translateY(-2px);
+}
+
+.telegram-user-display.loading {
+    border-color: #4a9eff33;
+}
+
+.telegram-user-display.error {
+    border-color: #ff4a4a33;
+    background: linear-gradient(135deg, #2d1a1a 0%, #3f2323 100%);
+}
+
+/* Avatar Styles */
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffd76a;
+    box-shadow: 0 2px 8px rgba(255, 215, 106, 0.3);
+    flex-shrink: 0;
+}
+
+/* User Info */
+.user-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.user-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-username {
+    font-size: 13px;
+    color: #ffd76a;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* User Actions */
+.user-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* View Profile Button */
+.view-profile-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(74, 158, 255, 0.2);
+    border: 1px solid rgba(74, 158, 255, 0.3);
+    color: #4a9eff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.view-profile-btn:hover {
+    background: rgba(74, 158, 255, 0.3);
+    border-color: rgba(74, 158, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.view-profile-btn i {
+    font-size: 16px;
+}
+
+/* Clear Button */
+.clear-user-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 74, 74, 0.2);
+    border: 1px solid rgba(255, 74, 74, 0.3);
+    color: #ff4a4a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.clear-user-btn:hover {
+    background: rgba(255, 74, 74, 0.3);
+    border-color: rgba(255, 74, 74, 0.5);
+    transform: rotate(90deg);
+}
+
+.clear-user-btn i {
+    font-size: 14px;
+}
+
+/* Loading State */
+.loading-spinner {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid rgba(74, 158, 255, 0.2);
+    border-top-color: #4a9eff;
+    animation: spin 0.8s linear infinite;
+    flex-shrink: 0;
+}
+
+.loading-text {
+    font-size: 14px;
+    color: #4a9eff;
+    font-weight: 600;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Error State */
+.error-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 74, 74, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.error-icon i {
+    font-size: 24px;
+    color: #ff4a4a;
+}
+
+.error-text {
+    font-size: 14px;
+    color: #ff4a4a;
+    font-weight: 600;
+}
+
+.error-subtext {
+    font-size: 12px;
+    color: #ff9999;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .telegram-user-display {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .user-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .user-name {
+        font-size: 14px;
+    }
+
+    .user-username {
+        font-size: 12px;
+    }
+
+    .user-actions {
+        gap: 6px;
+    }
+
+    .view-profile-btn,
+    .clear-user-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .view-profile-btn i {
+        font-size: 14px;
+    }
+
+    .clear-user-btn i {
+        font-size: 12px;
+    }
+
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] .telegram-user-display {
+    direction: rtl;
+}
+
+[dir="rtl"] .user-name,
+[dir="rtl"] .user-username {
+    text-align: right;
+}

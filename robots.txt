@@ -1,0 +1,24 @@
+# Robots.txt for Panda Store
+# https://pandastore.store
+
+User-agent: *
+Allow: /
+Disallow: /cdn-cgi/
+Disallow: /test-telegram-user-fetch.html
+
+# Sitemap
+Sitemap: https://pandastore.store/sitemap.xml
+
+# Google Bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /img/
+Allow: /assets/
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

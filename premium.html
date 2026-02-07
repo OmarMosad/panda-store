@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting... - Panda Store Premium</title>
+    <link rel="icon" type="image/png" href="../assets/pandastore.jpg?v=2026"><!-- SEO Meta Tags -->
+    <meta name="description" content="Buy Telegram Premium at the best prices - Panda Store. Exclusive features, instant delivery, secure payment">
+    <meta name="keywords" content="telegram premium, buy telegram premium, panda store, premium subscription, telegram features">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Panda Store - Buy Telegram Premium">
+    <meta property="og:description" content="Buy Telegram Premium at the best prices. Exclusive features, instant delivery, secure payment">
+    <meta property="og:image" content="https://pandastore.store/img/prev.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://pandastore.store/premium.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Panda Store - Buy Telegram Premium">
+    <meta name="twitter:description" content="Buy Telegram Premium at the best prices. Exclusive features, instant delivery, secure payment">
+    <meta name="twitter:image" content="https://pandastore.store/img/prev.webp">
+    <meta name="twitter:site" content="@PandaStore">
+    
+    <!-- Auto-redirect based on browser language -->
+    <script>
+    (function() {
+        // ⚠️ التحقق من وجود معاملات Telegram في URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const hasTelegramData = urlParams.has('id') && urlParams.has('hash');
+        
+        if (hasTelegramData) {
+            // إذا كان هناك بيانات Telegram، إعادة التوجيه إلى /ar/login.html مع الحفاظ على المعاملات
+            console.log('✅ Telegram authentication detected, redirecting to /ar/login.html');
+            window.location.replace('/ar/login.html' + window.location.search);
+            return;
+        }
+        
+        // Get browser language
+        const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+        
+        // Language to path mapping for premium pages
+        const langMap = {
+            'ar': '/premium/ar/',
+            'en': '/premium/en/',
+            'de': '/premium/de/',
+            'es': '/premium/es/',
+            'fr': '/premium/fr/',
+            'it': '/premium/it/',
+            'ru': '/premium/ru/'
+        };
+        
+        // Check if browser language matches any supported language
+        for (const [lang, path] of Object.entries(langMap)) {
+            if (userLang.startsWith(lang)) {
+                window.location.replace(path);
+                return;
+            }
+        }
+        
+        // Default to English if no match found
+        window.location.replace('/premium/en/');
+    })();
+    </script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 215, 106, 0.2);
+            border-top-color: #ffd76a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem;
+            font-weight: 600;
+        }
+        p {
+            color: #8b949e;
+            margin: 0;
+        }
+        .links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .links a {
+            color: #ffd76a;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ffd76a33;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        .links a:hover {
+            background: #ffd76a22;
+            border-color: #ffd76a66;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h1>Redirecting to Premium...</h1>
+        <p>Please wait while we redirect you to the appropriate language.</p>
+        
+        <div class="links">
+            <a href="/premium/ar/">العربية</a>
+            <a href="/premium/en/">English</a>
+            <a href="/premium/de/">Deutsch</a>
+            <a href="/premium/es/">Español</a>
+            <a href="/premium/fr/">Français</a>
+            <a href="/premium/it/">Italiano</a>
+            <a href="/premium/ru/">Русский</a>
+        </div>
+    </div>
+    
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/premium/en/">
+    </noscript>
+</body>
+</html>

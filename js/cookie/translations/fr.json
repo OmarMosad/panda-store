@@ -1,0 +1,32 @@
+{
+    "consentModal": {
+        "title": "Nous utilisons des cookies",
+        "description": "En cliquant sur le bouton « Accepter », vous acceptez les <a href=\"/fr/terms-of-use.html\">Conditions d'utilisation</a>, la <a href=\"/fr/privacy-policy.html\">Politique de confidentialité</a> et consentez également au traitement des données personnelles.",
+        "acceptAllBtn": "Tout accepter",
+        "acceptNecessaryBtn": "Tout rejeter",
+        "showPreferencesBtn": "Gérer les préférences"
+    },
+    "preferencesModal": {
+        "title": "Préférences de cookies",
+        "acceptAllBtn": "Tout accepter",
+        "acceptNecessaryBtn": "Tout rejeter",
+        "savePreferencesBtn": "Enregistrer les préférences",
+        "closeIconLabel": "Fermer",
+        "sections": [
+            {
+                "title": "Utilisation des cookies",
+                "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation, diffuser des publicités ou du contenu personnalisés et analyser notre trafic. En cliquant sur « Tout accepter », vous consentez à notre utilisation des cookies."
+            },
+            {
+                "title": "Cookies strictement nécessaires",
+                "description": "Ces cookies sont essentiels au bon fonctionnement de notre site Web. Sans ces cookies, le site Web ne fonctionnerait pas correctement.",
+                "linkedCategory": "necessary"
+            },
+            {
+                "title": "Cookies analytiques",
+                "description": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site Web en collectant et en rapportant des informations de manière anonyme.",
+                "linkedCategory": "analytics"
+            }
+        ]
+    }
+}

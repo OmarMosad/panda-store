@@ -1,0 +1,20 @@
+# Redirect Cloudflare RUM endpoint
+/cdn-cgi/rum    /cdn-cgi/rum    200
+
+# Static assets should NOT be redirected
+/css/*    /css/:splat    200
+/js/*     /js/:splat     200
+/img/*    /img/:splat    200
+/assets/* /assets/:splat 200
+
+# Language folders and their content
+/ar/*     /ar/:splat     200
+/de/*     /de/:splat     200
+/en/*     /en/:splat     200
+/es/*     /es/:splat     200
+/fr/*     /fr/:splat     200
+/it/*     /it/:splat     200
+/ru/*     /ru/:splat     200
+
+# Root redirect to language detection
+/         /index.html    200

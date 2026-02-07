@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting... - Panda Store</title>
+    <link rel="icon" type="image/png" href="../assets/pandastore.jpg?v=2026"><!-- SEO Meta Tags -->
+    <meta name="description" content="First Arabic Website for Telegram Stars & Premium! Buy Telegram Stars instantly at the best prices. Automatic delivery, secure payment, 24/7 Arabic support. Available in Egypt, Saudi Arabia, UAE, Kuwait, Qatar, and all Arab countries. Panda Store - The most trusted in the Middle East!">
+    <meta name="keywords" content="telegram stars, buy telegram stars, telegram premium, panda store, شراء نجوم تيليجرام, شحن نجوم تيليجرام, نجوم تليجرام, buy telegram stars cheap, telegram stars price, how to buy telegram stars, telegram stars Egypt, telegram stars Saudi Arabia, telegram stars UAE, telegram stars Kuwait, telegram stars Qatar, telegram stars Bahrain, telegram stars Oman, telegram stars Jordan, telegram stars Lebanon, telegram stars Iraq, telegram stars Palestine, telegram stars Morocco, telegram stars Tunisia, telegram stars Algeria, telegram stars Libya, شحن نجوم تيليجرام مصر, شحن نجوم تيليجرام السعودية, شحن نجوم تيليجرام الامارات, شحن نجوم تيليجرام الكويت, نجوم تليجرام رخيص, موقع عربي نجوم تيليجرام, اول موقع عربي تيليجرام, دفع تلقائي نجوم تيليجرام, telegram subscription, telegram premium subscription, cheap telegram stars, instant telegram stars, automatic telegram stars, telegram stars online, telegram stars crypto, telegram stars TON, telegram stars USDT, telegram stars visa, telegram stars mastercard, telegram stars paypal, kaufen telegram stars, comprar telegram stars, acheter telegram stars, acquistare telegram stars, купить telegram stars, arabic telegram store, middle east telegram stars, gcc telegram stars, arab telegram premium, first arabic telegram website, موقع تليجرام عربي, متجر تليجرام عربي, شراء ستارز تليجرام, telegram stars 2026, panda store telegram, باندا ستور, telegram bot stars, telegram channel stars, telegram stars for creators, telegram stars referral, earn with telegram stars, telegram stars affiliate">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Panda Store - First Arabic Telegram Stars Website | شحن نجوم تيليجرام">
+    <meta property="og:description" content="أول وأشهر موقع عربي متكامل لشحن نجوم تيليجرام! First Arabic website for Telegram Stars with automatic delivery. Available in all Arab countries.">
+    <meta property="og:image" content="https://pandastore.store/img/prev.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://pandastore.store/">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="it_IT">
+    <meta property="og:locale:alternate" content="ru_RU">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Panda Store - First Arabic Telegram Stars Website">
+    <meta name="twitter:description" content="أول وأشهر موقع عربي لشحن نجوم تيليجرام! Buy Telegram Stars at the best prices with automatic delivery in all Arab countries.">
+    <meta name="twitter:image" content="https://pandastore.store/img/prev.webp">
+    <meta name="twitter:site" content="@PandaStore">
+    
+    <!-- Canonical & Alternate Links -->
+    <link rel="canonical" href="https://pandastore.store/">
+    <link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/">
+    <link rel="alternate" hreflang="en" href="https://pandastore.store/en/">
+    <link rel="alternate" hreflang="de" href="https://pandastore.store/de/">
+    <link rel="alternate" hreflang="es" href="https://pandastore.store/es/">
+    <link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/">
+    <link rel="alternate" hreflang="it" href="https://pandastore.store/it/">
+    <link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/">
+    <link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/">
+    
+    <!-- Auto-redirect based on browser language -->
+    <script>
+    (function() {
+        // الحصول على جميع معاملات URL (بما في ذلك رابط الإحالة)
+        const urlParams = new URLSearchParams(window.location.search);
+        const queryString = window.location.search; // الحفاظ على جميع المعاملات
+        
+        // ⚠️ التحقق من وجود معاملات Telegram في URL
+        const hasTelegramData = urlParams.has('id') && urlParams.has('hash');
+        
+        if (hasTelegramData) {
+            // إذا كان هناك بيانات Telegram، إعادة التوجيه إلى /ar/login.html مع الحفاظ على المعاملات
+            console.log('✅ Telegram authentication detected, redirecting to /ar/login.html');
+            window.location.replace('/ar/login.html' + queryString);
+            return;
+        }
+        
+        // Get browser language
+        const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+        
+        // Language to path mapping
+        const langMap = {
+            'ar': '/ar/',
+            'en': '/en/',
+            'de': '/de/',
+            'es': '/es/',
+            'fr': '/fr/',
+            'it': '/it/',
+            'ru': '/ru/'
+        };
+        
+        // Check if browser language matches any supported language
+        for (const [lang, path] of Object.entries(langMap)) {
+            if (userLang.startsWith(lang)) {
+                // الحفاظ على معاملات URL (مثل ref= للإحالة)
+                window.location.replace(path + (queryString || ''));
+                return;
+            }
+        }
+        
+        // Default to English if no match found - مع الحفاظ على المعاملات
+        window.location.replace('/en/' + (queryString || ''));
+    })();
+    </script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 215, 106, 0.2);
+            border-top-color: #ffd76a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem;
+            font-weight: 600;
+        }
+        p {
+            color: #8b949e;
+            margin: 0;
+        }
+        .links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .links a {
+            color: #ffd76a;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ffd76a33;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        .links a:hover {
+            background: #ffd76a22;
+            border-color: #ffd76a66;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h1>Redirecting...</h1>
+        <p>Please wait while we redirect you to the appropriate language.</p>
+        
+        <div class="links">
+            <a href="/ar/">العربية</a>
+            <a href="/en/">English</a>
+            <a href="/de/">Deutsch</a>
+            <a href="/es/">Español</a>
+            <a href="/fr/">Français</a>
+            <a href="/it/">Italiano</a>
+            <a href="/ru/">Русский</a>
+        </div>
+    </div>
+    
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/en/">
+    </noscript>
+</body>
+</html>

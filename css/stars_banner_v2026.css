@@ -1,0 +1,94 @@
+.star-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background: linear-gradient(145deg, #1e242c, #161b22);*/
+    padding: 100px 0;
+    /*border-radius: 16px;*/
+    /*box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);*/
+    overflow: hidden;
+    /*margin-bottom: 10px;*/
+}
+
+.main-star img {
+    position: relative;
+    width: 170px;
+    animation: pulse 3s infinite ease-in-out;
+    z-index: 2;
+    /*filter: drop-shadow(0 0 5px #f0c419);*/
+    pointer-events: none;
+    user-select: none;
+}
+
+.lottie-on-top {
+    position: relative; /* Или absolute, если нужно точно позиционировать */
+    z-index: 10; /* Убедитесь, что значение выше, чем у других элементов */
+    pointer-events: none; /* Чтобы элемент не блокировал взаимодействие с другими элементами */
+}
+
+.star-min-sticker {
+    position: relative;
+    animation: pulse 3s infinite ease-in-out;
+    z-index: 2;
+    /*filter: drop-shadow(0 0 5px #f0c419);*/
+    pointer-events: none;
+    user-select: none;
+}
+
+.animated-stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.small-star {
+    position: absolute;
+    width: var(--star-size, 10px);
+    height: var(--star-size, 10px);
+    /*background: url("http://127.0.0.1/img/star.svg") no-repeat center center;*/
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="%23FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>') no-repeat center center;
+    /*filter: hue-rotate(-30deg) saturate(10) brightness(1.5) contrast(2) sepia(0.6);*/
+    background-size: contain;
+    opacity: 0;
+    /*animation: move-stars 5s infinite ease-in-out;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    transform-origin: center;
+}
+
+@keyframes move-stars {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    10% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(calc(-50% + var(--x-shift)), calc(-50% + var(--y-shift)));
+    }
+    70% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--x-shift)), calc(-50% + var(--y-shift))) scale(0.8);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px rgba(240, 196, 25, 0.55));
+    }
+    50% {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 20px rgba(240, 196, 25, 0.55));
+    }
+}

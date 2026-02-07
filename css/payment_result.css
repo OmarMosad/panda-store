@@ -1,0 +1,48 @@
+.payment_result-banner-wrapper {
+    margin: 0 10px;
+}
+
+.payment_banner {
+    height: 70px;
+    border-radius: 10px;
+    padding-left: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    line-height: 16px;
+}
+
+.payment_banner-success::before,
+.payment_banner-failure::before {
+    content: '';
+    display: block;
+    min-width: 32px;
+    min-height: 32px;
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+}
+
+.payment_banner-success {
+    border: solid 3px #31922d;
+    background-color: #0aff001a;
+}
+.payment_banner-success::before {
+    background-image: url('../img/payment-success.svg');
+}
+
+.payment_banner-failure {
+    border: solid 3px #c43b3b;
+    background-color: #ff00001a;
+}
+.payment_banner-failure::before {
+    background-image: url('../img/payment-failure.svg');
+}
+
+@media screen and (max-width: 767px) {
+    .payment_banner {
+        font-size: 14px;
+        padding-right: 5px;
+    }
+}

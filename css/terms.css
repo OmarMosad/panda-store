@@ -1,0 +1,26 @@
+.terms-section {
+    padding: 0 10px;
+}
+
+.terms-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.terms-section h2 {
+    margin: 20px 0 10px;
+    font-weight: bold;
+}
+
+.terms-section p, ul {
+    color: #8b949e;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.terms-section ul {
+    list-style: circle;
+    padding-left: 30px;
+}

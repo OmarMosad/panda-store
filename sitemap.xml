@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- ==========================================
+       MAIN HOMEPAGE - ALL LANGUAGES
+       Canonical URLs only (no index.html duplicates)
+       ========================================== -->
+  
+  <!-- Main Redirect Page -->
+  <url>
+    <loc>https://pandastore.store/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
+  </url>
+
+  <!-- Arabic Homepage -->
+  <url>
+    <loc>https://pandastore.store/ar/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+  </url>
+
+  <!-- English Homepage -->
+  <url>
+    <loc>https://pandastore.store/en/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+  </url>
+
+  <!-- German Homepage -->
+  <url>
+    <loc>https://pandastore.store/de/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+  </url>
+
+  <!-- Spanish Homepage -->
+  <url>
+    <loc>https://pandastore.store/es/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+  </url>
+
+  <!-- French Homepage -->
+  <url>
+    <loc>https://pandastore.store/fr/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+  </url>
+
+  <!-- Italian Homepage -->
+  <url>
+    <loc>https://pandastore.store/it/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+  </url>
+
+  <!-- Russian Homepage -->
+  <url>
+    <loc>https://pandastore.store/ru/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+  </url>
+
+  <!-- ==========================================
+       BUY TELEGRAM STARS PAGES
+       High priority commercial pages
+       ========================================== -->
+  
+  <url>
+    <loc>https://pandastore.store/ar/buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/en/buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/de/buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/es/buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/fr/buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/it/buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/ru/buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/buy-telegram-stars.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/buy-telegram-stars.html"/>
+  </url>
+
+  <!-- ==========================================
+       PREMIUM PAGES
+       Secondary commercial pages
+       ========================================== -->
+  
+  <url>
+    <loc>https://pandastore.store/premium/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/premium/ar/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/premium/en/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/premium/de/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/premium/es/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/premium/fr/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/premium/it/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/premium/ru/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ==========================================
+       BLOG LIST PAGES
+       Content hubs
+       ========================================== -->
+  
+  <url>
+    <loc>https://pandastore.store/ar/blog.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/en/blog.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/de/blog.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/es/blog.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/fr/blog.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/it/blog.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/ru/blog.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ==========================================
+       GUIDE PAGES
+       Informational content
+       ========================================== -->
+  
+  <!-- What are Telegram Stars -->
+  <url>
+    <loc>https://pandastore.store/ar/guide/what-are-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/en/guide/what-are-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/de/guide/what-are-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/es/guide/what-are-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/fr/guide/what-are-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/it/guide/what-are-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/ru/guide/what-are-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- How to Buy Telegram Stars -->
+  <url>
+    <loc>https://pandastore.store/ar/guide/how-to-buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/en/guide/how-to-buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/de/guide/how-to-buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/es/guide/how-to-buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/fr/guide/how-to-buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/it/guide/how-to-buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/ru/guide/how-to-buy-telegram-stars.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ==========================================
+       LEGAL PAGES
+       Low priority
+       ========================================== -->
+  
+  <url>
+    <loc>https://pandastore.store/ar/privacy-policy.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/en/privacy-policy.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/ar/terms-of-use.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://pandastore.store/en/terms-of-use.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

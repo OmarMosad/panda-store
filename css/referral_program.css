@@ -1,0 +1,264 @@
+.section-referral-program {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tm-field {
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+.icon-referral:before {
+    width: 24px;
+    height: 24px;
+    background-image: url(/img/referral_program.svg);
+    margin: 13px 15px;
+    position: absolute;
+    pointer-events: none;
+    content: '';
+    display: inline-block;
+    vertical-align: top;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #d2d2d2;
+}
+
+.tm-field input {
+    font-family: "Inter", sans-serif;
+    background-color: #20272c;
+    color: #d2d2d2;
+    border: none;
+    border-radius: 0.5em;
+    text-align: left;
+    outline: none;
+    height: 50px;
+    padding: 12px 42px 12px 48px;
+    font-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+}
+
+.tm-input:placeholder-shown ~ .tm-referral-copy, .tm-referral-input:placeholder-shown ~ .tm-referral-copy {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.tm-referral-copy {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+
+.icon-referral-copy:before {
+    content: '';
+    display: inline-block;
+    vertical-align: top;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 22px;
+    height: 25px;
+    background-image: url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M21%208C21%206.34315%2019.6569%205%2018%205H10C8.34315%205%207%206.34315%207%208V20C7%2021.6569%208.34315%2023%2010%2023H18C19.6569%2023%2021%2021.6569%2021%2020V8ZM19%208C19%207.44772%2018.5523%207%2018%207H10C9.44772%207%209%207.44772%209%208V20C9%2020.5523%209.44772%2021%2010%2021H18C18.5523%2021%2019%2020.5523%2019%2020V8Z%22%20fill%3D%22%238494a3%22%2F%3E%3Cpath%20d%3D%22M6%203H16C16.5523%203%2017%202.55228%2017%202C17%201.44772%2016.5523%201%2016%201H6C4.34315%201%203%202.34315%203%204V18C3%2018.5523%203.44772%2019%204%2019C4.55228%2019%205%2018.5523%205%2018V4C5%203.44772%205.44772%203%206%203Z%22%20fill%3D%22%238494a3%22%2F%3E%3C%2Fsvg%3E);
+}
+.copied.icon-referral-copy:before {
+    background-image: url(data:image/svg+xml,%3Csvg%20fill%3D%22%2300ff59%22%20viewBox%3D%220%200%2064%2064%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M56.103%2C16.824l-33.296%2C33.297l-14.781%2C-14.78l2.767%2C-2.767l11.952%2C11.952l30.53%2C-30.53c0.943%2C0.943%201.886%2C1.886%202.828%2C2.828Z%22%20fill-rule%3D%22nonzero%22%2F%3E%3C%2Fsvg%3E);
+}
+
+.referral-link-wrapper {
+    background-color: #0d1117;
+    border-radius: 0.5em;
+    padding: 15px;
+    color: #fff;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.balance-wrapper {
+    display: flex;
+    color: #fff;
+    font-weight: 900;
+    background-color: #0d1117;
+    border-radius: 0.5em;
+    padding: 10px;
+}
+
+.balance-item-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.stars-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.referral-balance {
+    flex: 1;
+}
+
+.total-balance {
+    flex: 0.7;
+}
+
+.referral-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.referral-record-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 30px;
+}
+.thead {
+    color: #8b949e;
+}
+
+.referral-record-row a {
+    color: #21c500;
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.referral-record-row div {
+    max-width: 250px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: center;
+}
+
+.referral-link {
+    justify-content: start !important;
+}
+
+.referral-wrapper hr {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 213, 40, 0), rgba(255, 213, 40, 0.10), rgba(255, 213, 40, 0));
+}
+
+.balance-hr {
+    width: 100%;
+    display: none;
+}
+
+.withdraw-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.withdraw-btn-wrapper {
+    position: relative;
+}
+
+.withdraw-btn {
+    background-color: #f0c419;
+    border: none;
+    color: #0d1117;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.withdraw-btn:hover {
+    background-color: #e5b014;
+}
+
+.withdraw-btn[disabled] {
+    color: #2c2f37;
+    background-color: #ffd436;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+    box-shadow: none;
+}
+
+.withdraw-btn-wrapper:hover .withdraw-tooltip {
+    display: flex;
+}
+
+.withdraw-tooltip {
+    position: absolute;
+    background-color: #000000e6;
+    width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    bottom: 45px;
+    left: -110px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.withdraw-tooltip::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #000000e6;
+    position: absolute;
+    top: 34px;
+}
+
+body.fr .withdraw-tooltip {
+    width: 330px;
+    left: -140px;
+}
+body.fr .withdraw-tooltip::before {
+    right: 155px;
+}
+
+@media screen and (max-width: 768px) {
+    .balance-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .balance-hr {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .withdraw-tooltip {
+        left: -260px;
+    }
+
+    .withdraw-tooltip::before {
+        right: 10px;
+    }
+}

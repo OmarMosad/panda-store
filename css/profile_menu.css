@@ -1,0 +1,46 @@
+.profile-menu-wrapper {
+    margin-top: 20px;
+}
+
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.menu-item {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 0 5px;
+    border-radius: 6px;
+    transition: .2s;
+}
+
+body.fr .menu-item {
+    font-size: 14px;
+}
+
+.menu-item:hover {
+    background-color: #ffffff12;
+}
+
+.menu-item-selected {
+    background-color: #ffffff12;
+}
+
+.menu-item-a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #ecb342;
+}
+
+.menu-item-a-selected {
+    cursor: default;
+}
