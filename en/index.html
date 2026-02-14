@@ -5028,10 +5028,22 @@
                                 throw new Error('Invalid response from /buy endpoint');
                         }
                 } catch (buyError) {
-                        console.error('❌ Failed to create transaction via /buy, using fallback:', buyError);
+                        console.error('❌ Failed to create transaction via /buy:', buyError);
                         console.error('Error details:', buyError.response?.data || buyError.message);
                         
-                        // Fallback: معاملة عادية إذا فشل MarketApp
+                        // Check for temporary API error
+                        if (buyError.response?.status === 503 && buyError.response?.data?.error === 'api_temporarily_unavailable') {
+                                Swal.fire({
+                                        icon: 'warning',
+                                        title: 'Payment service temporarily unavailable',
+                                        text: buyError.response.data.message || 'Please try again in a moment.',
+                                        confirmButtonText: 'OK',
+                                        confirmButtonColor: '#34b3ff'
+                                });
+                                return;
+                        }
+                        
+                        // Fallback: Regular transaction if MarketApp fails
                         tx = {
                                 validUntil: Math.floor(Date.now() / 1000) + 300,
                                 messages: [{

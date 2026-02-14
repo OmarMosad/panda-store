@@ -4800,8 +4800,20 @@
                                 throw new Error('Invalid response from /buy endpoint');
                         }
                 } catch (buyError) {
-                        console.error('❌ Failed to create transaction via /buy, using fallback:', buyError);
+                        console.error('❌ Failed to create transaction via /buy:', buyError);
                         console.error('Error details:', buyError.response?.data || buyError.message);
+                        
+                        // التحقق من خطأ API مؤقت
+                        if (buyError.response?.status === 503 && buyError.response?.data?.error === 'api_temporarily_unavailable') {
+                                Swal.fire({
+                                        icon: 'warning',
+                                        title: 'خدمة الدفع غير متاحة مؤقتاً',
+                                        text: buyError.response.data.messageAr || 'يرجى المحاولة مرة أخرى بعد قليل.',
+                                        confirmButtonText: 'حسناً',
+                                        confirmButtonColor: '#34b3ff'
+                                });
+                                return;
+                        }
                         
                         // Fallback: معاملة عادية إذا فشل MarketApp
                         tx = {
