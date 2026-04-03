@@ -7,7 +7,7 @@ Disallow: /cdn-cgi/
 Disallow: /test-telegram-user-fetch.html
 
 # Sitemap
-Sitemap: https://pandastore.store/sitemap.xml
+Sitemap: https://pandastore.store/sitemap-index.xml
 
 # Google Bots
 User-agent: Googlebot

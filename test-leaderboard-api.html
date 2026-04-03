@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test - Leaderboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #0d1117;
+            color: #ffffff;
+        }
+        h1 {
+            color: #ffd76a;
+        }
+        button {
+            background: #ffd76a;
+            color: #0d1117;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #ffb84d;
+        }
+        #result {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background: #28a745;
+            color: white;
+        }
+        .error {
+            background: #dc3545;
+            color: white;
+        }
+        .loading {
+            background: #ffc107;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 API Test - Leaderboard Endpoint</h1>
+    
+    <div>
+        <button onclick="testAPI()">Test API</button>
+        <button onclick="clearResult()">Clear</button>
+    </div>
+    
+    <div id="status"></div>
+    <div id="result"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function testAPI() {
+            const statusDiv = document.getElementById('status');
+            const resultDiv = document.getElementById('result');
+            
+            statusDiv.innerHTML = '<div class="status loading">⏳ Testing API...</div>';
+            resultDiv.innerHTML = '';
+            
+            try {
+                const startTime = performance.now();
+                const response = await axios.get(window.buildApiUrl('/api/leaderboard'), {
+                    timeout: 15000
+                });
+                const endTime = performance.now();
+                const duration = (endTime - startTime).toFixed(2);
+                
+                if (response.data && response.data.success) {
+                    statusDiv.innerHTML = `<div class="status success">✅ API Test Successful (${duration}ms)</div>`;
+                    
+                    const data = response.data;
+                    let output = `Status: ${response.status}\n`;
+                    output += `Success: ${data.success}\n`;
+                    output += `Total Users: ${data.total_users}\n`;
+                    output += `Updated At: ${data.updated_at}\n\n`;
+                    output += `=== Top 20 Buyers ===\n\n`;
+                    
+                    data.leaderboard.forEach((user, index) => {
+                        output += `${index + 1}. @${user.username}\n`;
+                        output += `   Stars: ${user.total_stars.toLocaleString()}\n`;
+                        output += `   Orders: ${user.total_orders}\n`;
+                        output += `   Last Purchase: ${user.last_purchase}\n\n`;
+                    });
+                    
+                    resultDiv.textContent = output;
+                } else {
+                    throw new Error('Invalid response format');
+                }
+                
+            } catch (error) {
+                const errorMsg = error.response ? 
+                    `${error.response.status}: ${error.response.statusText}` : 
+                    error.message;
+                    
+                statusDiv.innerHTML = `<div class="status error">❌ API Test Failed: ${errorMsg}</div>`;
+                resultDiv.textContent = JSON.stringify(error.response?.data || error, null, 2);
+            }
+        }
+        
+        function clearResult() {
+            document.getElementById('status').innerHTML = '';
+            document.getElementById('result').innerHTML = '';
+        }
+        
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            console.log('🧪 Test page loaded');
+        });
+    </script>
+
+</body>
+</html>

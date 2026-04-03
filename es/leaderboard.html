@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+
+
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="../img/storephoto.png?v=2026">
+        <title>Tabla de Clasificación de Mejores Compradores 🏆 - Panda Store</title>
+        <meta name="description" content="¡Descubre a los mejores compradores de Telegram Stars en Panda Store! Mira quién lidera la tabla de clasificación con la mayor cantidad de estrellas compradas." />
+        <meta name="keywords" content="tabla clasificación telegram stars, mejores compradores, clasificación panda store, mejores clientes, campeones telegram stars" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Tabla de Clasificación de Mejores Compradores - Panda Store" />
+        <meta property="og:site_name" content="Panda Store" />
+        <meta property="og:description" content="Ve los mejores compradores de Telegram Stars en Panda Store" />
+        <meta property="og:image" content="https://pandastore.store/img/prev.webp" />
+        <meta property="og:url" content="https://pandastore.store/es/leaderboard.html">
+        <meta property="og:locale" content="es_ES" />
+
+        <!-- CookieConsent v3 -->
+        <link rel="stylesheet" href="/js/_lib/cookieconsent/cookieconsent-3.0.1_v9.css?v=20260319">
+        <script type="module" src="/js/cookie/cookieConsentConfig_v9.js?v=20260319"></script>
+        <!-- [-] -->
+
+        <!-- jQuery -->
+        <script src="/js/_lib/jquery.min_v9.js?v=20260319"></script>
+        <script src="/js/config_v9.js?v=20260323"></script>
+        <!-- [-] -->
+
+        <!-- Sweetalert2 -->
+        <link rel="stylesheet" href="/js/_lib/sweetalert2/default_v9.css?v=20260319">
+        <script src="/js/_lib/sweetalert2/sweetalert2.min_v9.js?v=20260319"></script>
+        <!-- [-] -->
+
+        <!-- LottiePlayer -->
+        <script src="/js/_lib/lottie-player-2_0_12.min_v9.js?v=20260319" defer></script>
+        <!-- [-] -->
+
+        <link rel="stylesheet" href="/css/reset_v9.css?v=20260319">
+        <link rel="stylesheet" href="/css/base_v2026_v9.css?v=20260319">
+        <link rel="stylesheet" href="/css/leaderboard_v9.css?v=20260319">
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://pandastore.store/es/leaderboard.html" />
+
+        <link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/leaderboard.html" />
+        <link rel="alternate" hreflang="en" href="https://pandastore.store/en/leaderboard.html" />
+        <link rel="alternate" hreflang="de" href="https://pandastore.store/de/leaderboard.html" />
+        <link rel="alternate" hreflang="es" href="https://pandastore.store/es/leaderboard.html" />
+        <link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/leaderboard.html" />
+        <link rel="alternate" hreflang="it" href="https://pandastore.store/it/leaderboard.html" />
+        <link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/leaderboard.html" />
+        <link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/leaderboard.html" />
+
+    </head>
+
+    <!-- LD+JSON -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://pandastore.store"
+            },{
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Clasificación",
+                "item": "https://pandastore.store/es/leaderboard"
+            }]
+        }
+    </script>
+    <!-- LD+JSON -->
+
+    <body class="es">
+        <link rel="stylesheet" href="/css/nav_v9.css?v=20260319">
+
+<nav class="navbar">
+    <div class="logo-wrapper">
+    <a href="/es/" class="navbar-brand">
+        <img src="/img/storephoto.png" alt="Store logo" class="store-logo" loading="lazy" decoding="async">
+        <img src="/img/storename.png" alt="Store name" class="store-name-img" loading="lazy" decoding="async">
+    </a>
+</div>    <div class="navbar-wrapper">
+        <div class="navbar-sub-wrapper">
+            <ul class="navbar-items-wrapper">
+                                                        <li class="item-default">
+                        <a class="item item-a " href="/es/"  onclick="scrollToSection('info-section')">
+                            ¿Cómo funciona?
+                        </a>
+                    </li>
+                                                        <li class="item-default">
+                        <a class="item item-a" href="buy-telegram-stars.html">
+                            Comprar Estrellas
+                        </a>
+                    </li>
+                                                        <li class="item-default">
+                        <a class="item item-a " href="blog.html">
+                            Blog
+                        </a>
+                    </li>
+                                                        <li class="item-default">
+                        <a class="item item-a item-a-selected" href="leaderboard.html">
+                            Clasificación
+                        </a>
+                    </li>
+                                                        <li class="item-default">
+                        <a class="item item-a " href="/support" onclick="openSupportLink(); return false;">
+                            Soporte
+                        </a>
+                    </li>
+                                                        <li class="item-default">
+                        <a class="item item-a " href="/channel" onclick="openChannelLink(); return false;">
+                            Canal TG
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+        <div class="navbar-sub-wrapper lang-bar-wrapper">
+            <div class="navbar-items-wrapper">
+                <div class="item-default">
+                    <div class="item-selected item-lang" id="lang_selected">
+                        <svg width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.23 20.403a9.011 9.011 0 005.684-7.153h-3.942c-.147 2.86-.793 5.388-1.741 7.153zm-.757-7.153c-.178 4.102-1.217 7.25-2.473 7.25-1.256 0-2.295-3.148-2.473-7.25h4.946zm0-2.5H9.527C9.705 6.648 10.744 3.5 12 3.5c1.256 0 2.295 3.148 2.473 7.25zm2.499 0h3.942a9.01 9.01 0 00-5.683-7.153c.948 1.765 1.594 4.293 1.741 7.153zm-9.936 0c.147-2.862.793-5.392 1.743-7.156a9.01 9.01 0 00-5.693 7.156h3.95zm0 2.5h-3.95a9.01 9.01 0 005.693 7.157c-.95-1.765-1.596-4.295-1.743-7.157z" fill="currentColor"></path></svg>
+                        Español
+                    </div>
+                </div>
+            </div>
+            <div class="lang-items-wrapper" id="lang_list">
+                <ul class="lang-items-list">
+                                                                                                                    <li class="">
+                                <a class="item-lang" href="https://pandastore.store/en/leaderboard">
+                                    English (US)
+                                </a>
+                            </li>
+                                                                                                <li class="">
+                                <a class="item-lang" href="https://pandastore.store/de/leaderboard">
+                                    Deutsch
+                                </a>
+                            </li>
+                                                                                                <li class="">
+                                <a class="item-lang" href="https://pandastore.store/it/leaderboard">
+                                    Italiano
+                                </a>
+                            </li>
+                                                                                                <li class="">
+                                <a class="item-lang" href="https://pandastore.store/ru/leaderboard">
+                                    Русский
+                                </a>
+                            </li>
+                                                                                                <li class="">
+                                <a class="item-lang" href="https://pandastore.store/fr/leaderboard">
+                                    Français
+                                </a>
+                            </li>
+                                                                                                <li class="">
+                                <a class="item-lang" href="https://pandastore.store/ar/leaderboard">
+                                    العربية
+                                </a>
+                            </li>
+                                                            </ul>
+            </div>
+        </div>
+                    <div class="navbar-sub-wrapper navbar-profiler">
+                <span class="separator"></span>
+                <a class="item item-a " href="login.html">Iniciar Sesión</a>
+            </div>
+            </div>
+    <div class="burger-btn" id="burger_btn">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M3 7C3 6.44771 3.44772 6 4 6H24C24.5523 6 25 6.44771 25 7C25 7.55229 24.5523 8 24 8H4C3.44772 8 3 7.55229 3 7Z" fill="#ffffff"></path><path d="M3 14C3 13.4477 3.44772 13 4 13H24C24.5523 13 25 13.4477 25 14C25 14.5523 24.5523 15 24 15H4C3.44772 15 3 14.5523 3 14Z" fill="#ffffff"></path><path d="M4 20C3.44772 20 3 20.4477 3 21C3 21.5523 3.44772 22 4 22H24C24.5523 22 25 21.5523 25 21C25 20.4477 24.5523 20 24 20H4Z" fill="#ffffff"></path></g></svg>
+    </div>
+</nav>
+
+<div class="mobile-menu-container" id="mobile_menu_container">
+    <div class="mobile-menu-wrapper">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-cross" id="mobile_menu_cross">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19 5L5 19M5.00001 5L19 19" stroke="#8b949e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </div>
+        </div>
+        <div class="mobile-menu-body">
+            <h6 class="mobile-menu-title">Navegación</h6>
+            <ul class="mobile-menu-ul">
+                                                        <li class="mobile-menu-li">
+                        <a class="mobile-menu-a" href="/es/"  onclick="scrollToSection('info-section')">
+                            ¿Cómo funciona?
+                        </a>
+                    </li>
+                    <hr>
+                                                        <li class="mobile-menu-li">
+                        <a class="mobile-menu-a" href="buy-telegram-stars.html">
+                            Comprar Estrellas
+                        </a>
+                    </li>
+                    <hr>
+                                                        <li class="mobile-menu-li">
+                        <a class="mobile-menu-a" href="blog.html">
+                            Blog
+                        </a>
+                    </li>
+                    <hr>
+                                                        <li class="mobile-menu-li">
+                        <a class="mobile-menu-a" href="leaderboard.html">
+                            Clasificación
+                        </a>
+                    </li>
+                    <hr>
+                                                        <li class="mobile-menu-li">
+                        <a class="mobile-menu-a" href="/support" onclick="openSupportLink(); return false;">
+                            Soporte
+                        </a>
+                    </li>
+                    <hr>
+                                                        <li class="mobile-menu-li">
+                        <a class="mobile-menu-a" href="/channel" onclick="openChannelLink(); return false;">
+                            Canal TG
+                        </a>
+                    </li>
+                    <hr>
+                            </ul>
+                            <div class="mobile-menu-profile-wrapper">
+                    <a class="mobile-menu-a-profile" href="login.html">Iniciar Sesión</a>
+                </div>
+                        <div class="navbar-sub-wrapper lang-bar-wrapper">
+                <div class="navbar-items-wrapper">
+                    <div class="item-default">
+                        <div class="item-selected item-lang" id="mobile_lang_selected">
+                            <svg width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.23 20.403a9.011 9.011 0 005.684-7.153h-3.942c-.147 2.86-.793 5.388-1.741 7.153zm-.757-7.153c-.178 4.102-1.217 7.25-2.473 7.25-1.256 0-2.295-3.148-2.473-7.25h4.946zm0-2.5H9.527C9.705 6.648 10.744 3.5 12 3.5c1.256 0 2.295 3.148 2.473 7.25zm2.499 0h3.942a9.01 9.01 0 00-5.683-7.153c.948 1.765 1.594 4.293 1.741 7.153zm-9.936 0c.147-2.862.793-5.392 1.743-7.156a9.01 9.01 0 00-5.693 7.156h3.95zm0 2.5h-3.95a9.01 9.01 0 005.693 7.157c-.95-1.765-1.596-4.295-1.743-7.157z" fill="currentColor"></path></svg>
+                            Español
+                        </div>
+                    </div>
+                </div>
+                <div class="lang-items-wrapper" id="mobile_lang_list">
+                    <ul class="lang-items-list">
+                                                                                                                                        <li class="">
+                                    <a class="item-lang" href="https://pandastore.store/en/leaderboard">
+                                        English (US)
+                                    </a>
+                                </li>
+                                                                                                                <li class="">
+                                    <a class="item-lang" href="https://pandastore.store/de/leaderboard">
+                                        Deutsch
+                                    </a>
+                                </li>
+                                                                                                                <li class="">
+                                    <a class="item-lang" href="https://pandastore.store/it/leaderboard">
+                                        Italiano
+                                    </a>
+                                </li>
+                                                                                                                <li class="">
+                                    <a class="item-lang" href="https://pandastore.store/ru/leaderboard">
+                                        Русский
+                                    </a>
+                                </li>
+                                                                                                                <li class="">
+                                    <a class="item-lang" href="https://pandastore.store/fr/leaderboard">
+                                        Français
+                                    </a>
+                                </li>
+                                                                                                                <li class="">
+                                    <a class="item-lang" href="https://pandastore.store/ar/leaderboard">
+                                        العربية
+                                    </a>
+                                </li>
+                                                                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="getUp__wrapper">
+    <div class="getUp__arrowUp">
+        <svg fill="#ffffff" height="10px" width="10px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"></path> </g></svg>
+    </div>
+</div>
+
+<script>
+    let lastCoord = 0;
+    let scrollTop = 0;
+
+    $(window).on('scroll', function() {
+        let scroll = $(window).scrollTop();
+
+        if (scroll > 0) {
+            $('.getUp__arrowUp').css('display', 'flex');
+        } else {
+            $('.getUp__arrowUp').css('display', 'none');
+        }
+    });
+
+    $('.getUp__arrowUp').on('click', () => {
+        lastCoord = scrollTop;
+        window.scrollTo(0, 0);
+    })
+</script>
+
+<script>
+    $(() => {
+        $(document).mouseup(function (e) {
+            let div = $('#lang_list');
+            if (!div.is(e.target)
+                && div.has(e.target).length === 0
+                && !$('#lang_selected').is(e.target)
+                && $('#lang_selected').has(e.target).length === 0
+            ) {
+                div.hide()
+            }
+        });
+
+        $(document).mouseup(function (e) {
+            let div = $('#mobile_lang_list');
+            if (!div.is(e.target)
+                && div.has(e.target).length === 0
+                && !$('#mobile_lang_selected').is(e.target)
+                && $('#mobile_lang_selected').has(e.target).length === 0
+            ) {
+                div.hide()
+            }
+        });
+    })
+
+    $('#lang_selected').on('click', function() {
+        if ($('#lang_list').is(':visible')) {
+            $('#lang_list').hide()
+        } else {
+            $('#lang_list').show(100)
+        }
+    })
+
+    $('#mobile_lang_selected').on('click', function() {
+        if ($('#mobile_lang_list').is(':visible')) {
+            $('#mobile_lang_list').hide()
+        } else {
+            $('#mobile_lang_list').show(100)
+        }
+    })
+
+    $('#burger_btn').on('click', () => {
+        $('#mobile_menu_container').show()
+        $('body').css('overflow', 'hidden')
+    })
+
+    $('#mobile_menu_cross').on('click', () => {
+        $('#mobile_menu_container').hide()
+        $('body').css('overflow', '')
+    })
+</script>
+
+        <div class="container main-container">
+            <div class="leaderboard-section">
+                <!-- Page Title -->
+                <div class="leaderboard-header">
+                    <h1 class="leaderboard-title">Tabla de Clasificación de Mejores Compradores</h1>
+                    <p class="leaderboard-subtitle">¡Celebrando nuestra increíble comunidad de compradores de Telegram Stars!</p>
+                    <button class="refresh-btn" onclick="window.leaderboard.refresh()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                        </svg>
+                        Actualizar
+                    </button>
+                </div>
+
+                <!-- Top 3 Podium -->
+                <div class="podium-container">
+                    <!-- 2nd Place -->
+                    <div class="podium-card podium-2nd">
+                        <div class="podium-badge badge-silver">2°</div>
+                        <div class="avatar-wrapper">
+                            <img src="../img/storephoto.png" alt="User Avatar" class="user-avatar" id="avatar-2">
+                        </div>
+                        <h3 class="username" id="username-2">@cargando...</h3>
+                        <div class="stars-count">
+                            <img src="../img/star.svg" alt="star" class="star-icon">
+                            <span id="stars-2">0</span>
+                        </div>
+                    </div>
+
+                    <!-- 1st Place -->
+                    <div class="podium-card podium-1st">
+
+                        <div class="podium-badge badge-gold">1°</div>
+                        <div class="avatar-wrapper">
+                            <img src="../img/storephoto.png" alt="User Avatar" class="user-avatar" id="avatar-1">
+                        </div>
+                        <h3 class="username" id="username-1">@cargando...</h3>
+                        <div class="stars-count">
+                            <img src="../img/star.svg" alt="star" class="star-icon">
+                            <span id="stars-1">0</span>
+                        </div>
+                    </div>
+
+                    <!-- 3rd Place -->
+                    <div class="podium-card podium-3rd">
+                        <div class="podium-badge badge-bronze">3°</div>
+                        <div class="avatar-wrapper">
+                            <img src="../img/storephoto.png" alt="User Avatar" class="user-avatar" id="avatar-3">
+                        </div>
+                        <h3 class="username" id="username-3">@cargando...</h3>
+                        <div class="stars-count">
+                            <img src="../img/star.svg" alt="star" class="star-icon">
+                            <span id="stars-3">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rankings List (4-20) -->
+                <div class="rankings-container">
+                    <div class="rankings-header">
+                        <h2>Top 20 Clasificación</h2>
+                    </div>
+                    <div class="rankings-list" id="rankings-list">
+                        <!-- Rankings will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer_v9.css?v=20260319">
+
+<footer>
+    <div class="container">
+        <hr>
+        <div class="footer-wrapper">
+            <div>
+                <div class="logo-wrapper">
+    <a href="/es/" class="navbar-brand">
+<img src="/img/storename.png" alt="Store name" class="store-name-img" loading="lazy" decoding="async">
+    </a>
+</div>                <p class="footer-sub-text">© pandastore.store 2024-2026</p>
+                <br>
+                <ul class="footer-items-wrapper">
+                    <li class="item-default">
+                        <a class="item item-a" href="terms-of-use.html">
+                            Términos de Uso
+                        </a>
+                    </li>
+                    <li class="item-default">
+                        <a class="item item-a" href="privacy-policy.html">
+                            Política de Privacidad
+                        </a>
+                    </li>
+                    <li class="item-default">
+                        <a class="item item-a" href="#"  data-cc="show-preferencesModal">
+                            Cookies
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="footer-items-wrapper">
+                                                                    <li class="item-default">
+                            <a class="item item-a" href="/es/"  onclick="scrollToSection('info-section')">
+                                ¿Cómo funciona?
+                            </a>
+                        </li>
+                                                                    <li class="item-default">
+                            <a class="item item-a" href="buy-telegram-stars.html">
+                                Comprar Estrellas
+                            </a>
+                        </li>
+                                                                    <li class="item-default">
+                            <a class="item item-a" href="blog.html">
+                                Blog
+                            </a>
+                        </li>
+                                                                    <li class="item-default">
+                            <a class="item item-a" href="leaderboard.html">
+                                Clasificación
+                            </a>
+                        </li>
+                                                                    <li class="item-default">
+                            <a class="item item-a" href="/support" onclick="openSupportLink(); return false;">
+                                Soporte
+                            </a>
+                        </li>
+                                                                    <li class="item-default">
+                            <a class="item item-a" href="/channel" onclick="openChannelLink(); return false;">
+                                Canal TG
+                            </a>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        $('#mobile_menu_container').hide()
+        $('body').css('overflow', '')
+    }
+</script>
+
+<!-- Axios CDN -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<!-- Leaderboard Data Script -->
+<script src="../js/leaderboard_v9.js?v=20260319"></script>
+
+</body>
+</html>
+

@@ -8,9 +8,9 @@
     <lastmod>2026-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
@@ -25,31 +25,16 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/"/>
   </url>
 
   <!-- English Homepage -->
-  <url>
-    <loc>https://pandastore.store/en/</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
-  </url>
-
   <!-- German Homepage -->
   <url>
     <loc>https://pandastore.store/de/</loc>
@@ -58,12 +43,12 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/"/>
   </url>
 
   <!-- Spanish Homepage -->
@@ -74,12 +59,12 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/"/>
   </url>
 
   <!-- French Homepage -->
@@ -90,12 +75,12 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/"/>
   </url>
 
   <!-- Italian Homepage -->
@@ -106,12 +91,12 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/"/>
   </url>
 
   <!-- Russian Homepage -->
@@ -122,12 +107,12 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/ru/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/es/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/fr/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/it/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/"/>
   </url>
 
   <!-- Buy Telegram Stars Pages (All Languages with hreflang) -->
@@ -238,13 +223,13 @@
 
   <!-- Premium Pages (All Languages) -->
   <url>
-    <loc>https://pandastore.store/premium/</loc>
+    <loc>https://pandastore.store/premium.html</loc>
     <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium.html"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/premium/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/premium/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/premium/es/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/premium/fr/"/>
@@ -258,28 +243,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/premium/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/premium/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/premium/es/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/premium/fr/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/premium/it/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/premium/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium/en/"/>
-  </url>
-
-  <url>
-    <loc>https://pandastore.store/premium/en/</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium/en/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/premium/ar/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/premium/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/premium/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/premium/fr/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/premium/it/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/premium/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium.html"/>
   </url>
 
   <url>
@@ -289,12 +259,12 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/premium/de/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/premium/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/premium/es/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/premium/fr/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/premium/it/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/premium/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium.html"/>
   </url>
 
   <url>
@@ -304,12 +274,12 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/premium/es/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/premium/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/premium/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/premium/fr/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/premium/it/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/premium/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium.html"/>
   </url>
 
   <url>
@@ -319,12 +289,12 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/premium/fr/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/premium/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/premium/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/premium/es/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/premium/it/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/premium/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium.html"/>
   </url>
 
   <url>
@@ -334,12 +304,12 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/premium/it/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/premium/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/premium/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/premium/es/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/premium/fr/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/premium/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium.html"/>
   </url>
 
   <url>
@@ -349,12 +319,12 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pandastore.store/premium/ru/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://pandastore.store/premium/ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pandastore.store/premium.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pandastore.store/premium/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pandastore.store/premium/es/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pandastore.store/premium/fr/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://pandastore.store/premium/it/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pandastore.store/premium.html"/>
   </url>
 
   <!-- Privacy Policy Pages -->

@@ -1,0 +1,642 @@
+/* Leaderboard Section Styles */
+.leaderboard-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.leaderboard-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.leaderboard-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ffd76a 0%, #ffb84d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.leaderboard-subtitle {
+    color: #8b949e;
+    font-size: 1.1rem;
+    animation: fadeInUp 0.8s ease;
+    margin-bottom: 15px;
+}
+
+/* Refresh Button */
+.refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ffd76a 0%, #ffb84d 100%);
+    color: #0d1117;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 106, 0.3);
+}
+
+.refresh-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 106, 0.5);
+}
+
+.refresh-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.refresh-btn svg {
+    animation: none;
+}
+
+.refresh-btn:active:not(:disabled) svg {
+    animation: spin 0.5s ease-in-out;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Podium Container */
+.podium-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep functionality */
+.podium-container::-webkit-scrollbar {
+    height: 0;
+    display: none;
+}
+
+.podium-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Podium Cards */
+.podium-card {
+    position: relative;
+    background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-width: 220px;
+    animation: slideUp 0.8s ease;
+}
+
+.podium-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 215, 106, 0.2);
+}
+
+/* 1st Place - Gold */
+.podium-1st {
+    order: 2;
+    border-color: #ffd76a;
+    min-height: 320px;
+}
+
+.podium-1st:hover {
+    box-shadow: 0 20px 50px rgba(255, 215, 106, 0.5);
+}
+
+/* 2nd Place - Silver */
+.podium-2nd {
+    order: 1;
+    border-color: #c0c0c0;
+    min-height: 280px;
+}
+
+.podium-2nd:hover {
+    box-shadow: 0 15px 40px rgba(192, 192, 192, 0.4);
+}
+
+/* 3rd Place - Bronze */
+.podium-3rd {
+    order: 3;
+    border-color: #cd7f32;
+    min-height: 280px;
+}
+
+.podium-3rd:hover {
+    box-shadow: 0 15px 40px rgba(205, 127, 50, 0.4);
+}
+
+/* Crown for 1st place */
+.podium-crown {
+    font-size: 3rem;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Podium Badge */
+.podium-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badge-gold {
+    background: linear-gradient(135deg, #ffd76a 0%, #ffb84d 100%);
+    color: #0d1117;
+    box-shadow: 0 5px 15px rgba(255, 215, 106, 0.4);
+}
+
+.badge-silver {
+    background: linear-gradient(135deg, #e8e8e8 0%, #c0c0c0 100%);
+    color: #0d1117;
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.4);
+}
+
+.badge-bronze {
+    background: linear-gradient(135deg, #f4a460 0%, #cd7f32 100%);
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(205, 127, 50, 0.4);
+}
+
+/* Avatar */
+.avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ffd76a;
+    box-shadow: 0 8px 20px rgba(255, 215, 106, 0.3);
+    background: #161b22;
+    position: relative;
+}
+
+.podium-1st .avatar-wrapper {
+    width: 140px;
+    height: 140px;
+}
+
+.user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    background: #0d1117;
+}
+
+/* Panda logo styling when used as fallback */
+.user-avatar[src*="logo.webp"] {
+    object-fit: contain;
+    padding: 15px;
+    background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+}
+
+.user-avatar:hover {
+    transform: scale(1.1);
+}
+
+/* Loading state for avatars */
+.avatar-wrapper.loading {
+    background: linear-gradient(90deg, #161b22 25%, #30363d 50%, #161b22 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Username */
+.username {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: bold;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+    padding: 0 5px;
+    line-height: 1.2;
+}
+
+/* Stars Count */
+.stars-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #ffd76a;
+    font-weight: bold;
+}
+
+.star-icon {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 2px 8px rgba(255, 215, 106, 0.5));
+}
+
+/* Rankings Container */
+.rankings-container {
+    margin-top: 60px;
+}
+
+.rankings-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.rankings-header h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Rankings List */
+.rankings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Ranking Item */
+.ranking-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+    border: 1px solid #30363d;
+    border-radius: 15px;
+    padding: 20px 25px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease;
+}
+
+.ranking-item:hover {
+    border-color: #ffd76a;
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(255, 215, 106, 0.2);
+}
+
+/* Left Side */
+.ranking-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.rank-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffd76a;
+    min-width: 40px;
+    text-align: center;
+}
+
+.ranking-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #30363d;
+    transition: all 0.3s ease;
+    background: #161b22;
+}
+
+.ranking-item:hover .ranking-avatar {
+    border-color: #ffd76a;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(255, 215, 106, 0.3);
+}
+
+/* Panda logo as fallback */
+.user-avatar[src*="logo.webp"],
+.ranking-avatar[src*="logo.webp"] {
+    object-fit: contain;
+    padding: 8px;
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+}
+
+.ranking-username {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 500;
+    max-width: 200px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Right Side */
+.ranking-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ranking-stars {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.3rem;
+    color: #ffd76a;
+    font-weight: bold;
+}
+
+.ranking-star-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0px);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .leaderboard-title {
+        font-size: 2rem;
+    }
+
+    .leaderboard-subtitle {
+        font-size: 1rem;
+    }
+    
+    .refresh-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .podium-container {
+        gap: 10px;
+        padding: 0 10px;
+        justify-content: flex-start;
+    }
+
+    .podium-card {
+        min-width: 140px;
+        max-width: 140px;
+        padding: 20px 15px;
+        flex-shrink: 0;
+    }
+
+    .podium-1st {
+        min-height: 260px;
+    }
+
+    .podium-2nd,
+    .podium-3rd {
+        min-height: 230px;
+    }
+
+    .avatar-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+
+    .podium-1st .avatar-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .username {
+        font-size: 1rem;
+    }
+
+    .stars-count {
+        font-size: 1.1rem;
+    }
+
+    .star-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .podium-crown {
+        font-size: 2rem;
+        top: -20px;
+    }
+
+    .podium-badge {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    .ranking-item {
+        padding: 15px 20px;
+    }
+
+    .ranking-left {
+        gap: 15px;
+    }
+
+    .rank-number {
+        font-size: 1.2rem;
+        min-width: 30px;
+    }
+
+    .ranking-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ranking-username {
+        font-size: 1rem;
+    }
+
+    .ranking-stars {
+        font-size: 1.1rem;
+    }
+
+    .ranking-star-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .leaderboard-section {
+        padding: 30px 10px;
+    }
+
+    .leaderboard-title {
+        font-size: 1.6rem;
+    }
+    
+    .refresh-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .podium-container {
+        gap: 8px;
+        padding: 0 5px;
+        justify-content: flex-start;
+    }
+
+    .podium-card {
+        min-width: 110px;
+        max-width: 110px;
+        padding: 15px 10px;
+        flex-shrink: 0;
+    }
+
+    .podium-1st {
+        min-height: 230px;
+    }
+
+    .podium-2nd,
+    .podium-3rd {
+        min-height: 200px;
+    }
+
+    .avatar-wrapper {
+        width: 60px;
+        height: 60px;
+        border-width: 3px;
+    }
+
+    .podium-1st .avatar-wrapper {
+        width: 75px;
+        height: 75px;
+    }
+
+    .username {
+        font-size: 0.85rem;
+        max-width: 95px;
+    }
+
+    .stars-count {
+        font-size: 0.95rem;
+    }
+
+    .star-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .podium-crown {
+        font-size: 1.5rem;
+        top: -15px;
+    }
+
+    .podium-badge {
+        padding: 5px 12px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Loading State */
+.loading-shimmer {
+    background: linear-gradient(90deg, #161b22 25%, #30363d 50%, #161b22 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Image fade in animation */
+.user-avatar,
+.ranking-avatar {
+    opacity: 0;
+    animation: fadeInImage 0.5s ease forwards;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
