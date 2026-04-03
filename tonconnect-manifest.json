@@ -1,7 +1,7 @@
 {
-  "url": "https://PandaStore.store",
+  "url": "https://pandastore.store",
   "name": "Panda Store",
-  "iconUrl": "https://pandastores.netlify.app/img/storephoto.png",
-  "termsOfUseUrl": "https://pandastores.netlify.app/terms",
-  "privacyPolicyUrl": "https://pandastores.netlify.app/privacy"
+  "iconUrl": "https://pandastore.store/img/storephoto.png",
+  "termsOfUseUrl": "https://pandastore.store/terms-of-use.html",
+  "privacyPolicyUrl": "https://pandastore.store/privacy-policy.html"
 }
