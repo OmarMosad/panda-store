@@ -1,0 +1,77 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/channel",
+      "destination": "https://t.me/pandaadds",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ar",
+      "destination": "/ar/index.html"
+    },
+    {
+      "source": "/de",
+      "destination": "/de/index.html"
+    },
+    {
+      "source": "/es",
+      "destination": "/es/index.html"
+    },
+    {
+      "source": "/fr",
+      "destination": "/fr/index.html"
+    },
+    {
+      "source": "/it",
+      "destination": "/it/index.html"
+    },
+    {
+      "source": "/ru",
+      "destination": "/ru/index.html"
+    },
+    {
+      "source": "/premium",
+      "destination": "/premium/index.html"
+    },
+    {
+      "source": "/premium/ar",
+      "destination": "/premium/ar/index.html"
+    },
+    {
+      "source": "/premium/de",
+      "destination": "/premium/de/index.html"
+    },
+    {
+      "source": "/premium/en",
+      "destination": "/premium/en/index.html"
+    },
+    {
+      "source": "/premium/es",
+      "destination": "/premium/es/index.html"
+    },
+    {
+      "source": "/premium/fr",
+      "destination": "/premium/fr/index.html"
+    },
+    {
+      "source": "/premium/it",
+      "destination": "/premium/it/index.html"
+    },
+    {
+      "source": "/premium/ru",
+      "destination": "/premium/ru/index.html"
+    },
+    {
+      "source": "^/(?<path>(?!.*\\.)[^/]+(?:/[^/]+)*)$",
+      "destination": "/:path.html"
+    }
+  ]
+}
