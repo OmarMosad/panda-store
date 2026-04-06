@@ -471,7 +471,35 @@
     <!-- Referral System Scripts -->
     <script defer src="/js/referral-tracking_v9.js?v=20260319"></script>
     <script src="/js/referral-system_v9.js?v=20260319"></script>
-    <script src="/js/telegram-login-button-en_v9.js?v=20260406"></script>
+    <script>
+        (function () {
+            const btn = document.getElementById('telegram_oauth_btn');
+            if (!btn) return;
+
+            btn.addEventListener('click', async function () {
+                const webApp = window.Telegram && window.Telegram.WebApp;
+                const hasSession = Boolean(webApp && typeof webApp.initData === 'string' && webApp.initData.trim());
+
+                if (!hasSession) {
+                    if (typeof Swal !== 'undefined') {
+                        Swal.fire({
+                            title: 'Open Inside Telegram',
+                            text: 'Login works only inside Telegram Mini App using direct Telegram session.',
+                            icon: 'info',
+                            confirmButtonText: 'OK'
+                        });
+                    } else {
+                        alert('Login works only inside Telegram Mini App using direct Telegram session.');
+                    }
+                    return;
+                }
+
+                if (window.telegramLoginHandler && typeof window.telegramLoginHandler.tryWebAppSessionAuth === 'function') {
+                    await window.telegramLoginHandler.tryWebAppSessionAuth();
+                }
+            });
+        })();
+    </script>
     <script src="/js/telegram-login-handler-en_v9.js?v=20260406"></script>
 
 </html>
