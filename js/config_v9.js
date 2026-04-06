@@ -12,7 +12,9 @@
     SUPPORT_LINK: 'https://t.me/OMAR_M_SHEHATA',
     CHANNEL_LINK: 'https://t.me/pandaadds',
     API_BASE_URL: 'https://api.pandastore.store',
-    TELEGRAM_LOGIN_BOT_ID: '7380609755'
+    TELEGRAM_LOGIN_BOT_ID: '7380609755',
+    TELEGRAM_LOGIN_CLIENT_ID: '8543314208',
+    TELEGRAM_LOGIN_BOT_USERNAME: 'PandaStores_bot'
   };
 
   // Global API helpers for all pages

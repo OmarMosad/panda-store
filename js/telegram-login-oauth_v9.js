@@ -1,100 +1,109 @@
 (function () {
     'use strict';
 
-    const FALLBACK_BOT_ID = '7380609755';
+    const DEFAULT_CLIENT_ID = '8543314208';
+    const SDK_SRC = 'https://oauth.telegram.org/js/telegram-login.js?3';
+    let sdkReady = false;
+    let sdkLoadingPromise = null;
 
-    const MESSAGES = {
-        ar: {
-            title: 'فتح تسجيل دخول تيليجرام',
-            text: 'جاري تحويلك إلى صفحة تسجيل الدخول الرسمية من Telegram...'
-        },
-        en: {
-            title: 'Open Telegram Login',
-            text: 'Redirecting you to the official Telegram login session page...'
-        },
-        de: {
-            title: 'Telegram Login oeffnen',
-            text: 'Weiterleitung zur offiziellen Telegram-Login-Seite...'
-        },
-        es: {
-            title: 'Abrir inicio de sesion',
-            text: 'Redirigiendo a la pagina oficial de sesion de Telegram...'
-        },
-        fr: {
-            title: 'Ouvrir la connexion Telegram',
-            text: 'Redirection vers la page officielle de connexion Telegram...'
-        },
-        it: {
-            title: 'Apri login Telegram',
-            text: 'Reindirizzamento alla pagina ufficiale di login Telegram...'
-        },
-        ru: {
-            title: 'Открыть вход Telegram',
-            text: 'Перенаправление на официальную страницу входа Telegram...'
-        }
-    };
-
-    function getLang() {
-        const lang = String(document.documentElement.lang || 'en').toLowerCase();
-        if (MESSAGES[lang]) return lang;
-        return 'en';
-    }
-
-    function getBotId() {
+    function getClientId() {
         const cfg = window.TELEGRAM_CONFIG || {};
-        const raw = String(cfg.TELEGRAM_LOGIN_BOT_ID || FALLBACK_BOT_ID).trim();
-        return /^\d+$/.test(raw) ? raw : FALLBACK_BOT_ID;
+        const raw = String(cfg.TELEGRAM_LOGIN_CLIENT_ID || DEFAULT_CLIENT_ID).trim();
+        return /^\d+$/.test(raw) ? raw : DEFAULT_CLIENT_ID;
     }
 
-    function buildOfficialTelegramOauthUrl() {
-        const params = new URLSearchParams({
-            bot_id: getBotId(),
-            origin: window.location.origin,
-            return_to: window.location.href,
-            request_access: 'write'
+    function ensureTelegramSdk() {
+        if (window.Telegram && window.Telegram.Login && typeof window.Telegram.Login.auth === 'function') {
+            sdkReady = true;
+            return Promise.resolve();
+        }
+
+        if (sdkLoadingPromise) {
+            return sdkLoadingPromise;
+        }
+
+        sdkLoadingPromise = new Promise((resolve, reject) => {
+            const existing = document.querySelector('script[data-telegram-login-sdk="true"]');
+            if (existing) {
+                existing.addEventListener('load', () => {
+                    sdkReady = true;
+                    resolve();
+                }, { once: true });
+                existing.addEventListener('error', () => reject(new Error('Telegram SDK failed to load')), { once: true });
+                return;
+            }
+
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = SDK_SRC;
+            script.dataset.telegramLoginSdk = 'true';
+            script.addEventListener('load', () => {
+                sdkReady = true;
+                resolve();
+            }, { once: true });
+            script.addEventListener('error', () => reject(new Error('Telegram SDK failed to load')), { once: true });
+            document.head.appendChild(script);
         });
 
-        return `https://oauth.telegram.org/auth?${params.toString()}`;
+        return sdkLoadingPromise;
     }
 
-    function showOpeningMessage() {
-        const lang = getLang();
-        const i18n = MESSAGES[lang] || MESSAGES.en;
-
-        if (typeof Swal !== 'undefined') {
-            Swal.fire({
-                title: i18n.title,
-                text: i18n.text,
-                icon: 'info',
-                timer: 1200,
-                showConfirmButton: false
-            });
+    function openTelegramLogin() {
+        if (!(sdkReady || (window.Telegram && window.Telegram.Login && typeof window.Telegram.Login.auth === 'function'))) {
+            throw new Error('Telegram login SDK is not ready');
         }
+
+        const handler = window.telegramLoginHandler;
+        const callback = function (result) {
+            if (handler && typeof handler.handleTelegramLibraryResult === 'function') {
+                handler.handleTelegramLibraryResult(result).catch(function (error) {
+                    console.error('Telegram login callback failed:', error);
+                });
+                return;
+            }
+
+            if (handler && typeof handler.onTelegramAuth === 'function') {
+                handler.onTelegramAuth(result);
+            }
+        };
+
+        window.Telegram.Login.auth({
+            client_id: getClientId(),
+            request_access: ['profile']
+        }, callback);
     }
 
-    async function onLoginClick() {
-        const webApp = window.Telegram && window.Telegram.WebApp;
-        const hasDirectSession = Boolean(webApp && typeof webApp.initData === 'string' && webApp.initData.trim());
-
-        if (hasDirectSession && window.telegramLoginHandler && typeof window.telegramLoginHandler.tryWebAppSessionAuth === 'function') {
-            await window.telegramLoginHandler.tryWebAppSessionAuth();
+    function initTelegramLoginButton() {
+        const btn = document.getElementById('telegram_oauth_btn');
+        if (!btn) {
             return;
         }
 
-        showOpeningMessage();
-        window.location.href = buildOfficialTelegramOauthUrl();
-    }
+        btn.addEventListener('click', function () {
+            if (!(sdkReady || (window.Telegram && window.Telegram.Login && typeof window.Telegram.Login.auth === 'function'))) {
+                const handler = window.telegramLoginHandler;
+                if (handler && typeof handler.showError === 'function') {
+                    handler.showError('Telegram login is loading. Please try again in a moment.');
+                    return;
+                }
+                alert('Telegram login is loading. Please try again in a moment.');
+                return;
+            }
 
-    function init() {
-        const button = document.getElementById('telegram_oauth_btn');
-        if (!button) return;
-
-        button.addEventListener('click', function () {
-            onLoginClick().catch(function () {
-                window.location.href = buildOfficialTelegramOauthUrl();
-            });
+            try {
+                openTelegramLogin();
+            } catch (error) {
+                console.error('Telegram login failed:', error);
+                const handler = window.telegramLoginHandler;
+                if (handler && typeof handler.showError === 'function') {
+                    handler.showError('Telegram login is loading. Please try again in a moment.');
+                    return;
+                }
+                alert('Telegram login is loading. Please try again in a moment.');
+            }
         });
     }
 
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', ensureTelegramSdk);
+    document.addEventListener('DOMContentLoaded', initTelegramLoginButton);
 })();

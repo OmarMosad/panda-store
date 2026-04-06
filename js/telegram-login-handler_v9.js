@@ -12,8 +12,196 @@ class TelegramLoginHandler {
 
     init() {
         this.tryWebAppSessionAuth();
+        this.handleTelegramOAuthResult();
         this.handleTelegramCallback();
+        this.watchTelegramOAuthMessages();
+        this.watchLoginState();
         window.onTelegramAuth = (user) => this.onTelegramAuth(user);
+    }
+
+    async handleTelegramLibraryResult(result) {
+        if (this.isProcessing || this.isCompleted) {
+            return;
+        }
+
+        if (!result) {
+            return;
+        }
+
+        if (result.error) {
+            throw new Error(String(result.error));
+        }
+
+        if (typeof result === 'string') {
+            await this.processOidcAuth(result);
+            return;
+        }
+
+        if (result.id_token) {
+            await this.processOidcAuth(String(result.id_token));
+            return;
+        }
+
+        if (result.id && result.hash && result.auth_date) {
+            await this.processAuth(result);
+            return;
+        }
+
+        if (result.user && result.user.id_token) {
+            await this.processOidcAuth(String(result.user.id_token));
+            return;
+        }
+
+        if (result.user && result.user.id && result.user.hash && result.user.auth_date) {
+            await this.processAuth(result.user);
+            return;
+        }
+
+        throw new Error('Telegram login data is incomplete. Please try again.');
+    }
+
+    watchTelegramOAuthMessages() {
+        window.addEventListener('message', (event) => {
+            if (this.isProcessing || this.isCompleted) {
+                return;
+            }
+
+            const origin = String(event.origin || '').toLowerCase();
+            if (origin !== 'https://oauth.telegram.org') {
+                return;
+            }
+
+            const payload = this.extractTelegramOAuthPayload(event.data);
+            if (!payload) {
+                return;
+            }
+
+            this.processAuth(payload).catch((error) => {
+                console.error('Telegram OAuth message handling failed:', error);
+            });
+        });
+    }
+
+    extractTelegramOAuthPayload(data) {
+        if (!data) {
+            return null;
+        }
+
+        if (typeof data === 'object') {
+            if (data.id_token) {
+                return { id_token: String(data.id_token) };
+            }
+
+            if (data.user && typeof data.user === 'object' && data.user.id) {
+                return {
+                    id: data.user.id,
+                    first_name: data.user.first_name || '',
+                    last_name: data.user.last_name || '',
+                    username: data.user.username || '',
+                    photo_url: data.user.photo_url || '',
+                    auth_date: data.auth_date || data.user.auth_date || '',
+                    hash: data.hash || data.user.hash || ''
+                };
+            }
+
+            if (data.id && (data.hash || data.id_token)) {
+                return data;
+            }
+        }
+
+        if (typeof data === 'string') {
+            const trimmed = data.trim();
+            if (!trimmed) {
+                return null;
+            }
+
+            try {
+                const parsed = JSON.parse(trimmed);
+                return this.extractTelegramOAuthPayload(parsed);
+            } catch (_) {
+                // fall through
+            }
+
+            try {
+                const urlParams = new URLSearchParams(trimmed.replace(/^#/, '').replace(/^\?/, ''));
+                if (urlParams.has('id_token')) {
+                    return { id_token: urlParams.get('id_token') };
+                }
+
+                const result = {
+                    id: urlParams.get('id'),
+                    first_name: urlParams.get('first_name'),
+                    last_name: urlParams.get('last_name'),
+                    username: urlParams.get('username'),
+                    photo_url: urlParams.get('photo_url'),
+                    auth_date: urlParams.get('auth_date'),
+                    hash: urlParams.get('hash')
+                };
+
+                if (result.id && (result.hash || result.id_token)) {
+                    return result;
+                }
+            } catch (_) {
+                // ignore
+            }
+        }
+
+        return null;
+    }
+
+    watchLoginState() {
+        window.addEventListener('storage', (event) => {
+            if (event.key === 'telegram_user_id' && event.newValue) {
+                this.redirectToProfile();
+            }
+        });
+
+        window.addEventListener('focus', () => {
+            if (TelegramLoginHandler.isLoggedIn()) {
+                this.redirectToProfile();
+            }
+        });
+    }
+
+    parseTelegramOAuthHash() {
+        const hash = String(window.location.hash || '').replace(/^#/, '').trim();
+        if (!hash) {
+            return null;
+        }
+
+        const params = new URLSearchParams(hash);
+        const values = params.getAll('tgAuthResult');
+        for (const value of values) {
+            if (!value) continue;
+
+            try {
+                return JSON.parse(value);
+            } catch (_) {
+                try {
+                    return JSON.parse(decodeURIComponent(value));
+                } catch (_) {
+                    // keep trying other values
+                }
+            }
+        }
+
+        return null;
+    }
+
+    async handleTelegramOAuthResult() {
+        if (this.isProcessing || this.isCompleted) {
+            return;
+        }
+
+        const oauthUser = this.parseTelegramOAuthHash();
+        if (oauthUser && oauthUser.id && oauthUser.hash && oauthUser.auth_date) {
+            await this.processAuth(oauthUser);
+            return;
+        }
+
+        if (String(window.location.hash || '').includes('tgAuthResult=')) {
+            this.clearTelegramOAuthHashFromUrl();
+        }
     }
 
     async tryWebAppSessionAuth() {
@@ -85,6 +273,10 @@ class TelegramLoginHandler {
             return;
         }
 
+        if (rawUser && rawUser.id_token) {
+            return this.processOidcAuth(rawUser.id_token);
+        }
+
         const user = this.sanitizePayload(rawUser);
         if (!user.id || !user.hash || !user.auth_date) {
             this.showError('Telegram login data is incomplete. Please try again.');
@@ -106,6 +298,30 @@ class TelegramLoginHandler {
             this.redirectToProfile();
         } catch (error) {
             console.error('Telegram login error:', error);
+            this.showError('Telegram sign-in could not be completed. Please try again.');
+        } finally {
+            this.isProcessing = false;
+        }
+    }
+
+    async processOidcAuth(idToken) {
+        if (this.isProcessing || this.isCompleted) {
+            return;
+        }
+
+        this.isProcessing = true;
+
+        try {
+            const verifyResult = await this.verifyOidcWithBackend(idToken);
+            if (!verifyResult?.success || !verifyResult.user?.id) {
+                throw new Error('Telegram OIDC verification failed');
+            }
+
+            await this.completeLogin(verifyResult.user);
+            this.isCompleted = true;
+            this.redirectToProfile();
+        } catch (error) {
+            console.error('Telegram OIDC login error:', error);
             this.showError('Telegram sign-in could not be completed. Please try again.');
         } finally {
             this.isProcessing = false;
@@ -184,6 +400,25 @@ class TelegramLoginHandler {
         return result;
     }
 
+    async verifyOidcWithBackend(idToken) {
+        const response = await fetch(this.buildUrl('/api/auth/telegram/verify'), {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id_token: idToken })
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+            const message = result?.error || `OIDC verification request failed with status ${response.status}`;
+            throw new Error(message);
+        }
+
+        return result;
+    }
+
     clearTelegramParamsFromUrl() {
         const url = new URL(window.location.href);
         const telegramKeys = ['id', 'first_name', 'last_name', 'username', 'photo_url', 'auth_date', 'hash'];
@@ -199,6 +434,16 @@ class TelegramLoginHandler {
         if (changed) {
             window.history.replaceState({}, document.title, url.toString());
         }
+    }
+
+    clearTelegramOAuthHashFromUrl() {
+        const url = new URL(window.location.href);
+        if (!String(url.hash || '').includes('tgAuthResult=')) {
+            return;
+        }
+
+        url.hash = '';
+        window.history.replaceState({}, document.title, url.toString());
     }
 
     redirectToProfile() {
