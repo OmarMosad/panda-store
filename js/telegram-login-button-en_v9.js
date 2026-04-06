@@ -1,18 +1,20 @@
 (function () {
     'use strict';
 
-    function showSessionOnlyMessage() {
-        const message = 'Login works only inside Telegram Mini App using direct Telegram session.';
-        if (typeof Swal !== 'undefined') {
-            Swal.fire({
-                title: 'Open Inside Telegram',
-                text: message,
-                icon: 'info',
-                confirmButtonText: 'OK'
-            });
-            return;
-        }
-        alert(message);
+    function buildOfficialTelegramOauthUrl() {
+        const botId = String(window.TELEGRAM_CONFIG?.TELEGRAM_LOGIN_BOT_ID || '7380609755').trim();
+        const params = new URLSearchParams({
+            bot_id: /^\d+$/.test(botId) ? botId : '7380609755',
+            origin: window.location.origin,
+            return_to: window.location.href,
+            request_access: 'write'
+        });
+
+        return `https://oauth.telegram.org/auth?${params.toString()}`;
+    }
+
+    function openOfficialOauth() {
+        window.location.href = buildOfficialTelegramOauthUrl();
     }
 
     function initTelegramOAuthButton() {
@@ -25,21 +27,16 @@
             const webApp = window.Telegram && window.Telegram.WebApp;
             const hasDirectSession = Boolean(webApp && typeof webApp.initData === 'string' && webApp.initData.trim());
 
-            if (!hasDirectSession) {
-                showSessionOnlyMessage();
-                return;
-            }
-
             try {
-                if (window.telegramLoginHandler && typeof window.telegramLoginHandler.tryWebAppSessionAuth === 'function') {
+                if (hasDirectSession && window.telegramLoginHandler && typeof window.telegramLoginHandler.tryWebAppSessionAuth === 'function') {
                     await window.telegramLoginHandler.tryWebAppSessionAuth();
                     return;
                 }
             } catch (_) {
-                // fall through to session-only message
+                // fall through to official oauth
             }
 
-            showSessionOnlyMessage();
+            openOfficialOauth();
         });
     }
 
