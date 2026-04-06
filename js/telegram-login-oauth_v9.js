@@ -3,6 +3,7 @@
 
     const DEFAULT_CLIENT_ID = '8543314208';
     const SDK_SRC = 'https://oauth.telegram.org/js/telegram-login.js?3';
+    const SDK_ORIGIN = 'https://oauth.telegram.org';
     let sdkReady = false;
     let sdkLoadingPromise = null;
 
@@ -15,6 +16,7 @@
     function ensureTelegramSdk() {
         if (window.Telegram && window.Telegram.Login && typeof window.Telegram.Login.auth === 'function') {
             sdkReady = true;
+            initTelegramSdkFlow();
             return Promise.resolve();
         }
 
@@ -39,6 +41,7 @@
             script.dataset.telegramLoginSdk = 'true';
             script.addEventListener('load', () => {
                 sdkReady = true;
+                initTelegramSdkFlow();
                 resolve();
             }, { once: true });
             script.addEventListener('error', () => reject(new Error('Telegram SDK failed to load')), { once: true });
@@ -48,29 +51,106 @@
         return sdkLoadingPromise;
     }
 
+    function decodeJwtPayload(token) {
+        try {
+            const parts = String(token || '').split('.');
+            if (parts.length !== 3) return null;
+            let payload = parts[1].replace(/-/g, '+').replace(/_/g, '/');
+            const pad = payload.length % 4;
+            if (pad) payload += '='.repeat(4 - pad);
+            return JSON.parse(atob(payload));
+        } catch (_) {
+            return null;
+        }
+    }
+
+    function normalizeTelegramResult(result) {
+        if (!result) {
+            return null;
+        }
+
+        if (result.error) {
+            return { error: String(result.error) };
+        }
+
+        if (typeof result === 'string') {
+            const user = decodeJwtPayload(result);
+            return user ? { id_token: result, user } : { error: 'malformed id_token' };
+        }
+
+        if (typeof result === 'object' && result.id_token) {
+            return result;
+        }
+
+        if (typeof result === 'object' && result.user && result.user.id) {
+            return result;
+        }
+
+        return result;
+    }
+
+    function getLoginHandler() {
+        return window.telegramLoginHandler || null;
+    }
+
+    function dispatchResultToHandler(rawResult) {
+        const handler = getLoginHandler();
+        const result = normalizeTelegramResult(rawResult);
+
+        if (result && result.error) {
+            if (handler && typeof handler.showError === 'function') {
+                const msg = result.error === 'popup_closed'
+                    ? 'Telegram login popup was closed before completion.'
+                    : `Telegram login failed: ${result.error}`;
+                handler.showError(msg);
+            }
+            return;
+        }
+
+        if (handler && typeof handler.handleTelegramLibraryResult === 'function') {
+            handler.handleTelegramLibraryResult(result).catch((error) => {
+                console.error('Telegram login callback failed:', error);
+            });
+            return;
+        }
+
+        if (handler && typeof handler.onTelegramAuth === 'function') {
+            handler.onTelegramAuth(result);
+        }
+    }
+
+    function initTelegramSdkFlow() {
+        if (!(window.Telegram && window.Telegram.Login && typeof window.Telegram.Login.init === 'function')) {
+            return;
+        }
+
+        window.Telegram.Login.init({
+            client_id: getClientId(),
+            request_access: ['profile'],
+            lang: String(document.documentElement.lang || 'en').slice(0, 2)
+        }, dispatchResultToHandler);
+
+        window.addEventListener('message', function (event) {
+            if (String(event.origin || '').toLowerCase() !== SDK_ORIGIN) return;
+            dispatchResultToHandler(event.data);
+        });
+    }
+
     function openTelegramLogin() {
         if (!(sdkReady || (window.Telegram && window.Telegram.Login && typeof window.Telegram.Login.auth === 'function'))) {
             throw new Error('Telegram login SDK is not ready');
         }
 
-        const handler = window.telegramLoginHandler;
-        const callback = function (result) {
-            if (handler && typeof handler.handleTelegramLibraryResult === 'function') {
-                handler.handleTelegramLibraryResult(result).catch(function (error) {
-                    console.error('Telegram login callback failed:', error);
-                });
-                return;
-            }
-
-            if (handler && typeof handler.onTelegramAuth === 'function') {
-                handler.onTelegramAuth(result);
-            }
-        };
+        if (window.Telegram && window.Telegram.Login && typeof window.Telegram.Login.open === 'function') {
+            window.Telegram.Login.open(dispatchResultToHandler);
+            return;
+        }
 
         window.Telegram.Login.auth({
             client_id: getClientId(),
-            request_access: ['profile']
-        }, callback);
+            request_access: ['profile'],
+            lang: String(document.documentElement.lang || 'en').slice(0, 2)
+        }, dispatchResultToHandler);
     }
 
     function initTelegramLoginButton() {
