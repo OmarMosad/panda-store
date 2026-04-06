@@ -11,8 +11,40 @@ class TelegramLoginHandler {
     }
 
     init() {
+        this.tryWebAppSessionAuth();
         this.handleTelegramCallback();
         window.onTelegramAuth = (user) => this.onTelegramAuth(user);
+    }
+
+    async tryWebAppSessionAuth() {
+        if (this.isProcessing || this.isCompleted) {
+            return;
+        }
+
+        const webApp = window.Telegram && window.Telegram.WebApp;
+        const initData = webApp && typeof webApp.initData === 'string' ? webApp.initData.trim() : '';
+        const webAppUser = webApp && webApp.initDataUnsafe && webApp.initDataUnsafe.user;
+
+        if (!initData || !webAppUser || !webAppUser.id) {
+            return;
+        }
+
+        this.isProcessing = true;
+
+        try {
+            const verifyResult = await this.verifyWebAppSessionWithBackend(initData);
+            if (!verifyResult?.success || !verifyResult.user?.id) {
+                throw new Error('Telegram WebApp session verification failed');
+            }
+
+            await this.completeLogin(verifyResult.user);
+            this.isCompleted = true;
+            this.redirectToProfile();
+        } catch (error) {
+            console.warn('Telegram WebApp session login skipped:', error?.message || error);
+        } finally {
+            this.isProcessing = false;
+        }
     }
 
     handleTelegramCallback() {
@@ -67,23 +99,7 @@ class TelegramLoginHandler {
                 throw new Error('Telegram verification failed');
             }
 
-            const verifiedUser = verifyResult.user;
-            localStorage.setItem('telegram_user', JSON.stringify(verifiedUser));
-            localStorage.setItem('telegram_user_id', String(verifiedUser.id));
-            localStorage.setItem('telegram_username', verifiedUser.username || String(verifiedUser.id));
-            localStorage.setItem('telegram_login_timestamp', Date.now().toString());
-
-            try {
-                if (window.referralSystem?.registerUser) {
-                    const registerResult = await window.referralSystem.registerUser(verifiedUser);
-                    const referralCode = registerResult?.user?.referralCode || registerResult?.user?.referral_code;
-                    if (registerResult?.success && referralCode) {
-                        localStorage.setItem('user_referral_code', referralCode);
-                    }
-                }
-            } catch (registerError) {
-                console.warn('User registration failed after Telegram verification:', registerError);
-            }
+            await this.completeLogin(verifyResult.user);
 
             this.clearTelegramParamsFromUrl();
             this.isCompleted = true;
@@ -96,23 +112,42 @@ class TelegramLoginHandler {
         }
     }
 
+    async completeLogin(verifiedUser) {
+        localStorage.setItem('telegram_user', JSON.stringify(verifiedUser));
+        localStorage.setItem('telegram_user_id', String(verifiedUser.id));
+        localStorage.setItem('telegram_username', verifiedUser.username || String(verifiedUser.id));
+        localStorage.setItem('telegram_login_timestamp', Date.now().toString());
+
+        try {
+            if (window.referralSystem?.registerUser) {
+                const registerResult = await window.referralSystem.registerUser(verifiedUser);
+                const referralCode = registerResult?.user?.referralCode || registerResult?.user?.referral_code;
+                if (registerResult?.success && referralCode) {
+                    localStorage.setItem('user_referral_code', referralCode);
+                }
+            }
+        } catch (registerError) {
+            console.warn('User registration failed after Telegram verification:', registerError);
+        }
+    }
+
+    buildUrl(path) {
+        if (typeof window.buildApiUrl === 'function') {
+            return window.buildApiUrl(path);
+        }
+
+        const rawPath = String(path || '').trim();
+        if (/^https?:\/\//i.test(rawPath)) {
+            return rawPath;
+        }
+
+        const apiBase = window.API_BASE_URL || window.TELEGRAM_CONFIG?.API_BASE_URL || window.location.origin;
+        const safePath = rawPath.startsWith('/') ? rawPath : `/${rawPath}`;
+        return `${apiBase}${safePath}`;
+    }
+
     async verifyWithBackend(telegramPayload) {
-        const buildUrl = (path) => {
-            if (typeof window.buildApiUrl === 'function') {
-                return window.buildApiUrl(path);
-            }
-
-            const rawPath = String(path || '').trim();
-            if (/^https?:\/\//i.test(rawPath)) {
-                return rawPath;
-            }
-
-            const apiBase = window.API_BASE_URL || window.TELEGRAM_CONFIG?.API_BASE_URL || window.location.origin;
-            const safePath = rawPath.startsWith('/') ? rawPath : `/${rawPath}`;
-            return `${apiBase}${safePath}`;
-        };
-
-        const response = await fetch(buildUrl('/api/auth/telegram/verify'), {
+        const response = await fetch(this.buildUrl('/api/auth/telegram/verify'), {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -124,6 +159,25 @@ class TelegramLoginHandler {
 
         if (!response.ok) {
             const message = result?.error || `Verification request failed with status ${response.status}`;
+            throw new Error(message);
+        }
+
+        return result;
+    }
+
+    async verifyWebAppSessionWithBackend(initData) {
+        const response = await fetch(this.buildUrl('/api/auth/telegram/webapp-session'), {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ initData })
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+            const message = result?.error || `WebApp session request failed with status ${response.status}`;
             throw new Error(message);
         }
 
