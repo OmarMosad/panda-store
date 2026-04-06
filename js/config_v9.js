@@ -11,7 +11,8 @@
   window.TELEGRAM_CONFIG = {
     SUPPORT_LINK: 'https://t.me/OMAR_M_SHEHATA',
     CHANNEL_LINK: 'https://t.me/pandaadds',
-    API_BASE_URL: 'https://api.pandastore.store'
+    API_BASE_URL: 'https://api.pandastore.store',
+    TELEGRAM_LOGIN_BOT_ID: '7380609755'
   };
 
   // Global API helpers for all pages
