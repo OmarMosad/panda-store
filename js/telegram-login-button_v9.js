@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    const DEFAULT_CLIENT_ID = '8543314208';
+    const DEFAULT_CLIENT_ID = '7380609755';
     const SDK_SRC = 'https://oauth.telegram.org/js/telegram-login.js?3';
     const SDK_ORIGIN = 'https://oauth.telegram.org';
     let sdkReady = false;
