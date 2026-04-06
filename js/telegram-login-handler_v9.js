@@ -183,13 +183,42 @@ class TelegramLoginHandler {
 
     static getCurrentUser() {
         const userJson = localStorage.getItem('telegram_user');
-        if (!userJson) {
-            return null;
+        if (userJson) {
+            try {
+                return JSON.parse(userJson);
+            } catch (e) {
+                // fall through to Telegram WebApp fallback
+            }
         }
 
+        const webAppUser = TelegramLoginHandler.getWebAppUser();
+        if (webAppUser) {
+            localStorage.setItem('telegram_user', JSON.stringify(webAppUser));
+            localStorage.setItem('telegram_user_id', String(webAppUser.id));
+            localStorage.setItem('telegram_username', webAppUser.username || String(webAppUser.id));
+            localStorage.setItem('telegram_login_timestamp', Date.now().toString());
+        }
+
+        return webAppUser;
+    }
+
+    static getWebAppUser() {
         try {
-            return JSON.parse(userJson);
-        } catch (e) {
+            const webApp = window.Telegram && window.Telegram.WebApp;
+            const user = webApp && webApp.initDataUnsafe && webApp.initDataUnsafe.user;
+            if (!user || !user.id) {
+                return null;
+            }
+
+            const username = user.username || `user_${user.id}`;
+            return {
+                id: String(user.id),
+                username,
+                first_name: user.first_name || '',
+                last_name: user.last_name || '',
+                photo_url: user.photo_url || ''
+            };
+        } catch (_) {
             return null;
         }
     }

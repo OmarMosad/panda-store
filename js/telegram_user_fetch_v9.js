@@ -118,7 +118,91 @@ function clearUserSelection() {
     clearUserDisplay();
 }
 
+function getTelegramMiniAppUser() {
+    try {
+        const webApp = window.Telegram && window.Telegram.WebApp;
+        const user = webApp && webApp.initDataUnsafe && webApp.initDataUnsafe.user;
+        if (!user || !user.id) return null;
+
+        return {
+            id: String(user.id),
+            username: user.username || `user_${user.id}`,
+            first_name: user.first_name || '',
+            last_name: user.last_name || '',
+            photo_url: user.photo_url || ''
+        };
+    } catch (_) {
+        return null;
+    }
+}
+
+function getStoredTelegramUser() {
+    try {
+        const raw = localStorage.getItem('telegram_user');
+        if (!raw) return null;
+        const user = JSON.parse(raw);
+        if (!user || !user.id) return null;
+        if (!user.username) {
+            user.username = `user_${user.id}`;
+        }
+        return user;
+    } catch (_) {
+        return null;
+    }
+}
+
+function persistTelegramUser(user) {
+    if (!user || !user.id) return;
+
+    try {
+        localStorage.setItem('telegram_user', JSON.stringify(user));
+        localStorage.setItem('telegram_user_id', String(user.id));
+        localStorage.setItem('telegram_username', user.username || String(user.id));
+        localStorage.setItem('telegram_login_timestamp', Date.now().toString());
+    } catch (_) {
+        // no-op
+    }
+}
+
+function applyTelegramUserToBuyForm(user) {
+    if (!user || !user.username) return;
+
+    const cleanUsername = String(user.username).trim().replace(/^@+/, '');
+    if (!cleanUsername) return;
+
+    const atUsername = `@${cleanUsername}`;
+    const usernameInput = document.getElementById('username');
+    if (usernameInput) {
+        usernameInput.value = atUsername;
+        usernameInput.setAttribute('data-username', cleanUsername);
+        usernameInput.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+
+    const legacyQueryInput = document.querySelector('[name="query"]');
+    if (legacyQueryInput && !String(legacyQueryInput.value || '').trim()) {
+        legacyQueryInput.value = atUsername;
+        legacyQueryInput.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+
+    const legacyTgUsernameInput = document.querySelector('[name="tgUsername"]');
+    if (legacyTgUsernameInput) {
+        legacyTgUsernameInput.value = cleanUsername;
+    }
+
+    const myselfElement = document.getElementById('myself');
+    if (myselfElement) {
+        myselfElement.textContent = cleanUsername;
+    }
+}
+
 // Event listeners disabled - inline script handles everything
 document.addEventListener('DOMContentLoaded', function() {
-    // Inline script in index.html handles all user fetching
+    const miniAppUser = getTelegramMiniAppUser();
+    const storedUser = getStoredTelegramUser();
+    const activeUser = miniAppUser || storedUser;
+
+    if (!activeUser) return;
+
+    persistTelegramUser(activeUser);
+    applyTelegramUserToBuyForm(activeUser);
 });
