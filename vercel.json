@@ -1,6 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": false,
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/channel",
@@ -68,10 +69,6 @@
     {
       "source": "/premium/ru",
       "destination": "/premium/ru/index.html"
-    },
-    {
-      "source": "^/(?<path>(?!.*\\.)[^/]+(?:/[^/]+)*)$",
-      "destination": "/:path.html"
     }
   ]
 }
