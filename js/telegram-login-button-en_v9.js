@@ -14,7 +14,21 @@
             return;
         }
 
-        button.addEventListener('click', function () {
+        button.addEventListener('click', async function () {
+            const webApp = window.Telegram && window.Telegram.WebApp;
+            const hasDirectSession = Boolean(webApp && typeof webApp.initData === 'string' && webApp.initData.trim());
+
+            if (hasDirectSession) {
+                try {
+                    if (window.telegramLoginHandler && typeof window.telegramLoginHandler.tryWebAppSessionAuth === 'function') {
+                        await window.telegramLoginHandler.tryWebAppSessionAuth();
+                        return;
+                    }
+                } catch (_) {
+                    // fallback to bot start link
+                }
+            }
+
             window.location.href = buildTelegramBotStartUrl();
         });
     }
