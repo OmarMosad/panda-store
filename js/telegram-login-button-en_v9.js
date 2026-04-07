@@ -116,6 +116,22 @@
         });
     }
 
+    function openManualOauthPopup() {
+        const redirectUri = `${window.location.origin}${window.location.pathname}`;
+        const lang = String(document.documentElement.lang || 'en').slice(0, 2);
+        const params = new URLSearchParams({
+            response_type: 'post_message',
+            client_id: getClientId(),
+            origin: window.location.origin,
+            redirect_uri: redirectUri,
+            scope: 'openid profile',
+            lang
+        });
+
+        const authUrl = `https://oauth.telegram.org/auth?${params.toString()}`;
+        window.open(authUrl, 'telegram_oidc_login', 'width=550,height=650,status=0,location=0,menubar=0,toolbar=0');
+    }
+
     function openTelegramLogin() {
         if (!(sdkReady || (window.Telegram && window.Telegram.Login && typeof window.Telegram.Login.auth === 'function'))) {
             throw new Error('Telegram login SDK is not ready');
@@ -144,6 +160,7 @@
                 openTelegramLogin();
             } catch (error) {
                 console.error('Telegram login failed:', error);
+                openManualOauthPopup();
                 const handler = window.telegramLoginHandler;
                 if (handler && typeof handler.showError === 'function') {
                     handler.showError('Telegram login is loading. Please try again in a moment.');
