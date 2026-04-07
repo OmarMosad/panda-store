@@ -3,7 +3,6 @@
 
     const DEFAULT_CLIENT_ID = '7380609755';
     const SDK_SRC = 'https://oauth.telegram.org/js/telegram-login.js?3';
-    const SDK_ORIGIN = 'https://oauth.telegram.org';
     let sdkReady = false;
     let sdkLoadingPromise = null;
 
@@ -126,30 +125,8 @@
 
         window.Telegram.Login.init({
             client_id: getClientId(),
-            request_access: ['profile'],
             lang: String(document.documentElement.lang || 'en').slice(0, 2)
         }, dispatchResultToHandler);
-
-        window.addEventListener('message', function (event) {
-            if (String(event.origin || '').toLowerCase() !== SDK_ORIGIN) return;
-            dispatchResultToHandler(event.data);
-        });
-    }
-
-    function openManualOauthPopup() {
-        const redirectUri = `${window.location.origin}${window.location.pathname}`;
-        const lang = String(document.documentElement.lang || 'en').slice(0, 2);
-        const params = new URLSearchParams({
-            response_type: 'post_message',
-            client_id: getClientId(),
-            origin: window.location.origin,
-            redirect_uri: redirectUri,
-            scope: 'openid profile',
-            lang
-        });
-
-        const authUrl = `https://oauth.telegram.org/auth?${params.toString()}`;
-        window.open(authUrl, 'telegram_oidc_login', 'width=550,height=650,status=0,location=0,menubar=0,toolbar=0');
     }
 
     function openTelegramLogin() {
@@ -164,7 +141,6 @@
 
         window.Telegram.Login.auth({
             client_id: getClientId(),
-            request_access: ['profile'],
             lang: String(document.documentElement.lang || 'en').slice(0, 2)
         }, dispatchResultToHandler);
     }
@@ -190,13 +166,12 @@
                 openTelegramLogin();
             } catch (error) {
                 console.error('Telegram login failed:', error);
-                openManualOauthPopup();
                 const handler = window.telegramLoginHandler;
                 if (handler && typeof handler.showError === 'function') {
-                    handler.showError('Telegram login is loading. Please try again in a moment.');
+                    handler.showError('Telegram login failed. Please try again.');
                     return;
                 }
-                alert('Telegram login is loading. Please try again in a moment.');
+                alert('Telegram login failed. Please try again.');
             }
         });
     }
